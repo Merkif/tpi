@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px 50px;
+  padding-block: 23px;
+  font-size: 14px;
+  color:rgba(40, 60, 85, 0.3);
+
+  &__link {
+    color:inherit;
+    text-transform: uppercase;
+
+    @include hover-focus-visible {
+      color:rgba(40, 60, 85, 0.5);
+    }
+  }
+}

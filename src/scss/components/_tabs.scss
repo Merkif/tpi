@@ -1,0 +1,57 @@
+.tabbed {
+  &__tablist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__tabpanels {
+    display: grid;
+  }
+
+  &__tabpanel {
+    outline: none;
+    grid-column: 1;
+    grid-row: 1;
+    transition-property: opacity, visibility;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+
+    &--hidden {
+      opacity: 0;
+      visibility: hidden;
+      transition-duration: 0.1s;
+      transition-timing-function: unset;
+      // overflow: hidden;
+      // height: 0;
+    }
+  }
+}
+
+
+.auth-tabs {
+  max-width: 545px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  &__tab {
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+
+    &:not([aria-selected="true"]) {
+      opacity: 0.3;
+
+      @include hover-focus-visible {
+        opacity: 0.5;
+      }
+    }
+  }
+}

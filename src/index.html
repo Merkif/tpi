@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html',{
+  "title":"фабрика позитивных изменений",
+  "description":"Создаем в обществе вектор развития, направленного на эволюцию самого человека, и разворот движения общества в сторону данного вектора",
+  "keywords":"фабрика, изменения",
+})
+
+<body class="page__body">
+  @include('partials/header.html', {"login":"false",})
+  <main class="main">
+    @include('partials/hero-section.html')
+  </main>
+  @include('partials/footer.html')
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<section class="main__section hero-section container">
+  <h1 class="hero-section__heading heading heading--large">теория <br> <span class="accent-color">позитивных</span> <br> изменений</h1>
+  <div class="hero-section__buttons buttons-group buttons-group--column">
+    <a class="button button--min-width button--lg-fontsize button--primary-color scroll" href="#forms">Начать заполнение  ↗</a>
+    <a class="button button--min-width button--lg-fontsize button--light-color" href="about.html">О проекте</a>
+  </div>
+  <div class="hero-section__media">
+    <picture>
+      <source srcset="img/hero-section-media.webp" type="image/webp">
+      <img class="hero-section__image" loading="lazy" src="img/hero-section-media.png" width="927" height="430" alt="">
+    </picture>
+  </div>
+  <div class="auth-tabs tabbed" id="forms">
+    <ul class="auth-tabs__list tabbed__tablist">
+      <li class="auth-tabs__item">
+        <a class="auth-tabs__tab heading heading--primary" href="#section-login">Авторизация</a>
+      </li>
+      <li class="auth-tabs__item">
+        <a class="auth-tabs__tab heading heading--primary" href="#section-registration">Регистрация</a>
+      </li>
+    </ul>
+    <div class="auth-tabs__panels tabbed__tabpanels">
+      <section class="auth-tabs__panel tabbed__tabpanel" id="section-login">
+        <form class="form">
+          <div class="form__group">
+            <label class="form__label">
+              <span class="sr-only">Введите почту</span>
+              <input type="email" name="email" id="email" placeholder="Email" required="">
+            </label>
+            <label class="form__label">
+              <span class="sr-only">Введите Пароль</span>
+              <input type="password" name="password" id="password" placeholder="Пароль" required="">
+            </label>
+          </div>
+          <div class="form__actions">
+            <button class="form__button button button--primary-color" type="submit">Войти</button>
+            <a class="form__registration button button--gray-color" href="#section-registration">Нет аккаунта? Создать</a>
+            <a class="form__password-recovery">Восстановить пароль</a>
+          </div>
+        </form>
+      </section>
+      <section class="auth-tabs__panel tabbed__tabpanel" id="section-registration">
+        <form class="form">
+          <div class="form__group">
+            <label class="form__label">
+              <span class="sr-only">ФИО</span>
+              <input type="text" name="name" id="name" placeholder="ФИО" required="">
+            </label>
+            <label class="form__label">
+              <span class="sr-only">Введите почту</span>
+              <input type="email" name="register-email" id="register-email" placeholder="Email" required="">
+            </label>
+            <label class="form__label">
+              <span class="sr-only">Введите Пароль</span>
+              <input type="password" name="register-password" id="register-password" placeholder="Пароль" required="">
+            </label>
+            <label class="form__label">
+              <span class="sr-only">Введите Пароль</span>
+              <input type="password" name="retype-password" id="retype-password" placeholder="Повторите пароль" required="">
+            </label>
+          </div>
+          <div class="form__actions">
+            <div class="media-uploader">
+              <button class="media-uploader__button js-media-uploader"
+                type="button"
+                data-thumbnail-method="contain"
+                data-thumbnail-width="112"
+                data-thumbnail-height="112"
+                data-accepted-files="image/png, image/svg+xml"
+                data-url="upload.php">
+
+                <svg aria-hidden="true" width="16" height="16">
+                  <use xlink:href="img/sprite.svg#attachment"></use>
+                </svg>
+                <span class="media-uploader__text media-uploader__text--main">Добавить фотографию профиля</span>
+                <span class="media-uploader__text media-uploader__text--opacity"> PNG или SVG (не более 2 Мб)</span>
+              </button>
+              <div class="media-uploader__preview-container"></div>
+            </div>
+
+            <label class="form__agreement">
+              <input type="checkbox" name="agreement" id="form-agreement" required>
+              <span>Нажимая кнопку отправить, вы даете согласие на обработку <a class="link link--underline" href="">персональных данных</a></span>
+            </label>
+            <button class="form__button button button--primary-color" type="submit">зарегистрироваться  ↗</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</section>

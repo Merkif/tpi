@@ -1,0 +1,58 @@
+<header class="header container">
+  <a class="header__logo logo">
+    <img class="logo__img" src="img/logo.svg" width="128" height="32" alt="Логотип фабрики позитивных изменений">
+  </a>
+  <a class="header__helper" href="/help">
+    <svg aria-hidden="true" width="16" height="16">
+      <use xlink:href="img/sprite.svg#helper"></use>
+    </svg>
+    <span>Помощь</span>
+  </a>
+  @if (login === "true") {
+    <a class="header__projects" href="/projects">
+      <svg aria-hidden="true" width="15" height="15">
+        <use xlink:href="img/sprite.svg#project"></use>
+      </svg>
+      <span>Все проекты</span>
+    </a>
+  }
+
+  @if (login === "false") {
+    <a class="header__login scroll" href="#forms">
+      <svg aria-hidden="true" width="15" height="15">
+        <use xlink:href="img/sprite.svg#user"></use>
+      </svg>
+      <span>Войти в аккаунт</span>
+    </a>
+  }
+
+  @if (login === "true") {
+    <div class="user-menu">
+      <a class="user-menu__link user-menu__link--main" href="">
+        <picture class="user-menu__picture">
+          <source srcset="img/elena.webp" type="image/webp">
+          <img class="user-menu__avatar" loading="lazy" src="img/elena.jpg" width="32" height="32" alt="Елена Иванова">
+        </picture>
+        <span class="user-menu__name">Елена Иванова</span>
+      </a>
+      <ul class="user-menu__list" role="list">
+        <li class="user-menu__item">
+          <a class="user-menu__link" href="profile.html">
+            <svg aria-hidden="true" width="15" height="15">
+              <use xlink:href="img/sprite.svg#user"></use>
+            </svg>
+            <span>Изменение профиля</span>
+          </a>
+        </li>
+        <li class="user-menu__item">
+          <a class="user-menu__link" href="profile.html">
+            <svg aria-hidden="true" width="15" height="15">
+              <use xlink:href="img/sprite.svg#logout"></use>
+            </svg>
+            <span>Выйти из аккаунта</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  }
+</header>

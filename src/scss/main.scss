@@ -1,0 +1,27 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "clamp-calc";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/logo";
+@import "./components/user-menu";
+@import "./components/header";
+@import "./components/heading";
+@import "./components/dropzone";
+@import "./components/buttons";
+@import "./components/tabs";
+@import "./components/form";
+
+
+
+// sections
+@import "./components/hero-section";
+
+//footer
+@import "./components/footer";
+
+//colors
+@import "./components/colors";

@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  align-items:center;
+  font-size: 14px;
+  position: sticky;
+  padding-block: 20px;
+  top: 0;
+  z-index: 10;
+  &__logo {
+    margin-right: 52px;
+  }
+  &__helper {
+    margin-right: auto;
+    opacity: 0.5;
+  }
+  &__helper,
+  &__login,
+  &__projects {
+    display: flex;
+    color:inherit;
+    gap: 8px;
+    outline-offset: 4px;
+    transition: opacity 0.2s linear;
+
+    @include hover-focus-visible {
+      opacity: 0.7;
+    }
+  }
+
+  &__projects {
+    margin-right: 32px;
+  }
+}

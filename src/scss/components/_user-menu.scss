@@ -1,0 +1,77 @@
+.user-menu {
+  position: relative;
+
+  &__link {
+    display: flex;
+    color: inherit;
+    align-items: center;
+    outline-offset:4px;
+    transition: opacity 0.2s linear;
+    &--main {
+      column-gap: 10px;
+      position: relative;
+      z-index: 2;
+      outline: none;
+
+      @include focus-visible {
+        color:var(--secondary-color)
+      }
+    }
+
+    @include hover-focus-visible {
+      opacity: 0.6;
+    }
+  }
+
+  &__picture {
+    display: flex;
+  }
+
+  &__avatar {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    filter: grayscale(1);
+  }
+
+  &__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    display: flex;
+    flex-direction: column;
+    padding: 21px 12px;
+    min-width: 190px;
+    gap: 16px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% + 20px);
+      left: -10px;
+      top: -42px;
+      bottom: 0;
+      background-color: var(--light-color);
+      box-shadow: 8px 8px 16px #DFDFDF;
+      border-radius: 16px;
+      z-index: -1;
+    }
+  }
+
+  &:hover &__list,
+  &:focus-within &__list {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__link:not(.user-menu__link--main) {
+    gap: 16px;
+  }
+}

@@ -1,0 +1,12 @@
+@mixin hover-focus-visible {
+  &:hover,
+  &:focus-visible {
+    @content;
+  }
+}
+
+@mixin focus-visible {
+  &:focus-visible {
+    @content;
+  }
+}
