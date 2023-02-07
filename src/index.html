@@ -8,7 +8,10 @@
 })
 
 <body class="page__body">
-  @include('partials/header.html', {"login":"false",})
+  @include('partials/header.html', {
+    "login":"false",
+    "home":"",
+  })
   <main class="main">
     @include('partials/hero-section.html')
   </main>

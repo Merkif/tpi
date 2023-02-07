@@ -1,7 +1,7 @@
 .form {
   font-size: 14px;
   font-weight: 500;
-  --placeholder: var(--primary-color);
+  --placeholder: rgba(var(--primary-color-rgb), 1.0);
 
   &__group {
     display: flex;
@@ -12,7 +12,7 @@
 
   input:not([type="checkbox"]):not([type="radio"]),
   textarea {
-    border: 1.5px solid var(--border-color, var(--primary-color));
+    border: 1.5px solid var(--border-color, rgba(var(--primary-color-rgb), 1.0));
     border-radius: 35px;
     width: 100%;
     color: var(--second-color);
@@ -94,8 +94,8 @@
 
   input[type='checkbox'],
   input[type='radio'] {
-    --active: var(--primary-color);
-    --active-inner: var(--primary-color);
+    --active: rgba(var(--primary-color-rgb), 1.0);
+    --active-inner: rgba(var(--primary-color-rgb), 1.0);
     --focus: 2px rgba(39, 94, 254, .5);
     --border: rgba(41, 61, 86, 1);;
     --border-hover: rgba(39, 94, 254, .5);

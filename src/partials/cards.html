@@ -1,0 +1,10 @@
+<li class="cards__item">
+  <div class="card @class">
+    @if (picture === "true") {
+      <div class="card__figure">
+        <img class="card__image" loading="lazy" src="@image.svg" width="@width" height="@height" alt="@title">
+      </div>
+    }
+    <a class="card__link" href="@link">@title</a>
+  </div>
+</li>

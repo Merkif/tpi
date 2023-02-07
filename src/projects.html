@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html',{
+  "title":"фабрика позитивных изменений",
+  "description":"Создаем в обществе вектор развития, направленного на эволюцию самого человека, и разворот движения общества в сторону данного вектора",
+  "keywords":"фабрика, изменения",
+})
+
+<body class="page__body">
+  @include('partials/header.html',
+  {
+    "login":"true",
+    "home":"href='/'"
+  })
+  <main class="main container">
+    <h1 class="sr-only">Все проекты</h1>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list" role="list">
+        @loop('partials/breadcrumb.html', [
+          {
+            "currentClass":"breadcrumb__link--current",
+            "ariaCurrent": "aria-location='current'",
+            "linkText":"Все проекты",
+            "link":"",
+            },
+        ])
+      </ol>
+    </nav>
+    <ul class="cards" role="list">
+      @loop('partials/cards.html', [
+        {
+          "picture":"false",
+          "title": "Добавить проект",
+          "link":"/create-project.html",
+          "class":"card--create",
+        },
+        {
+          "picture":"true",
+          "title": "Ничего лишнего",
+          "image":"img/projects/proj-1",
+          "link":"/project-1.html",
+          "width":"167",
+          "height":"66",
+          "class":"",
+        },
+        {
+          "picture":"true",
+          "title": "Новые люди",
+          "image":"img/projects/proj-2",
+          "link":"/projec-2.html",
+          "width":"190",
+          "height":"33",
+          "class":"",
+        },
+        {
+          "picture":"true",
+          "title": "e.development",
+          "image":"img/projects/proj-3",
+          "link":"/projec-3.html",
+          "width":"187",
+          "height":"26",
+          "class":"",
+        },
+        {
+          "picture":"true",
+          "title": "Лампа",
+          "image":"img/projects/proj-4",
+          "link":"/projec-4.html",
+          "width":"122",
+          "height":"80",
+          "class":"",
+        },
+        {
+          "picture":"true",
+          "title": "Светлое кафе",
+          "image":"img/projects/proj-5",
+          "link":"/projec-5.html",
+          "width":"80",
+          "height":"80",
+          "class":"",
+        },
+      ])
+    </ul>
+  </main>
+  @include('partials/footer.html')
+</body>
+
+</html>

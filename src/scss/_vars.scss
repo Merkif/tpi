@@ -1,5 +1,3 @@
-// если вы хотите использовать sass-переменные - удалите root
-// colors
 :root {
   // base
   --font-family: "Gilroy", sans-serif;
@@ -11,8 +9,8 @@
   --light-color: #fff;
 
   //color
-  --primary-color:#283c55ff;
-  --secondary-color:#fa0a32ff;
+  --primary-color-rgb:40,60,85;
+  --secondary-color-rgb:250,10,50;
   --gray-color:#F9F9FA;
   --light-gray:#F0F1F2;
 }

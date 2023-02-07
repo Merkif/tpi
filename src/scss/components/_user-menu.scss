@@ -14,7 +14,7 @@
       outline: none;
 
       @include focus-visible {
-        color:var(--secondary-color)
+        color:rgba(var(--secondary-color-rgb), 1.0)
       }
     }
 
