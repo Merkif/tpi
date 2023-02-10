@@ -16,6 +16,12 @@
 @import "./components/form";
 @import "./components/breadcrumbs";
 @import "./components/card";
+@import "./components/question-block";
+@import "./components/panel-layout";
+@import "./components/invite-block";
+@import "./components/copy";
+@import "./components/export-box";
+@import "./components/attachments";
 
 
 
@@ -27,3 +33,6 @@
 
 //colors
 @import "./components/colors";
+
+//animations
+@import "./components/animations";

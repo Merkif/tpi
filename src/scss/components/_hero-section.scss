@@ -15,5 +15,20 @@
 
   &__media {
     margin-bottom: 58px;
+    padding-inline: 30px;
+    position: relative;
+  }
+  &__svg {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    &-rotate {
+      will-change: transform;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation:rotating 4.5s linear infinite reverse;
+    }
   }
 }
+

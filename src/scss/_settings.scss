@@ -127,3 +127,14 @@ p+p {
     opacity: 0.7;
   }
 }
+
+.text {
+  font-size: 14px;
+  line-height: 1.45;
+  color:rgba(var(--primary-color-rgb), 0.5);
+  margin: 0;
+
+  &--offset {
+    margin-bottom: 17px;
+  }
+}

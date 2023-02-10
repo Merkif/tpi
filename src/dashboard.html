@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html',{
+  "title":"фабрика позитивных изменений",
+  "description":"Создаем в обществе вектор развития, направленного на эволюцию самого человека, и разворот движения общества в сторону данного вектора",
+  "keywords":"фабрика, изменения",
+})
+
+<body class="page__body">
+  @include('partials/header.html',
+  {
+    "class":"header--bg",
+    "login":"true",
+    "home":"href='/'",
+  })
+  <main class="main container">
+    <h1 class="sr-only">Добавить проект</h1>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list" role="list">
+        @loop('partials/breadcrumb.html', [
+          {
+            "currentClass":"",
+            "ariaCurrent": "",
+            "linkText":"Все проекты",
+            "link":"href='projects.html'",
+          },
+          {
+            "currentClass":"",
+            "ariaCurrent": "",
+            "linkText":"Ничего лишнего",
+            "link":"href='projects-1.html'",
+          },
+          {
+            "currentClass":"breadcrumb__link--current",
+            "ariaCurrent": "aria-location='current'",
+            "linkText":"Панель управления",
+            "link":"",
+          },
+        ])
+      </ol>
+    </nav>
+    <div class="panel-layout">
+      <div class="panel-layout__item panel-layout__item--full">
+        <div class="question-box">
+          <h2 class="question-box__heading heading heading--primary">Вопросы</h2>
+          <ul class="q-cards q-cards--horizontal" data-scroll="horizontal" role="list">
+            @loop('partials/question-block.html', [
+            {
+              "title":"Шаг 1",
+              "link":"#step-1",
+              "items": {
+                "item1":"true",
+                "item2":"false",
+                "item3":"half",
+                },
+              },
+            {
+              "title":"Шаг 2",
+              "link":"#step-2",
+              "items": {
+                "item1":"false",
+                "item2":"true",
+                "item3":"half",
+                },
+              },
+            {
+              "title":"Шаг 3",
+              "link":"#step-3",
+              "items": {
+                "item1":"true",
+                "item2":"true",
+                "item3":"half",
+                },
+              },
+            {
+              "title":"Шаг 4",
+              "link":"#step-4",
+              "items": {
+                "item1":"true",
+                "item2":"true",
+                "item3":"half",
+                },
+              },
+            {
+              "title":"Шаг 5",
+              "link":"#step-5",
+              "items": {
+                "item1":"true",
+                "item2":"true",
+                "item3":"half",
+                },
+              },
+            {
+              "title":"Шаг 6",
+              "link":"#step-6",
+              "items": {
+                "item1":"true",
+                "item2":"true",
+                "item3":"true",
+                },
+              },
+            {
+              "title":"Шаг 7",
+              "link":"#step-7",
+              "items": {
+                "item1":"true",
+                "item2":"true",
+                "item3":"true",
+                },
+              },
+            {
+              "title":"Шаг 8",
+              "link":"#step-8",
+              "items": {
+                "item1":"true",
+                "item2":"true",
+                "item3":"true",
+                },
+              },
+            {
+              "title":"Шаг 9",
+              "link":"#step-9",
+              "items": {
+                "item1":"true",
+                "item2":"true",
+                "item3":"true",
+                },
+              },
+            {
+              "title":"Шаг 10",
+              "link":"#step-10",
+              "items": {
+                "item1":"true",
+                "item2":"true",
+                "item3":"false",
+                },
+              },
+            ])
+          </ul>
+        </div>
+      </div>
+      <div class="panel-layout__item panel-layout__item--half panel-layout__item--rspan-3">
+        <form class="form form--box" action="" method="post">
+          <h2 class="heading heading--primary">Данные проекта</h2>
+          <div class="form__group">
+            <label class="form__label">
+              <span class="sr-only">Данные проекта</span>
+              <input type="text" name="project-name" id="project-name" placeholder="Название проекта *" required>
+            </label>
+            <label class="form__label">
+              <span class="sr-only">Название проекта</span>
+              <input type="text" name="company-name" id="company-name" placeholder="Название компании *" required>
+            </label>
+            <label class="form__label">
+              <span class="sr-only">Название проекта</span>
+              <input type="text" name="position" id="position" placeholder="Должность *" required>
+            </label>
+            <div class="media-uploader">
+              <button class="media-uploader__button js-media-uploader"
+                type="button"
+                data-thumbnail-method="contain"
+                data-thumbnail-width="112"
+                data-thumbnail-height="112"
+                data-accepted-files="image/png, image/svg+xml"
+                data-file="img/projects/proj-1.svg"
+                data-url="upload.php">
+
+                <svg aria-hidden="true" width="16" height="16">
+                  <use xlink:href="img/sprite.svg#attachment"></use>
+                </svg>
+                <span class="media-uploader__text media-uploader__text--main">Изменить логотип</span>
+                <span class="media-uploader__text media-uploader__text--opacity"> PNG или SVG (не более 2 Мб)</span>
+              </button>
+              <div class="media-uploader__preview-container"></div>
+            </div>
+            <label class="form__label">
+              <textarea name="message" id="message" rows="2" placeholder="Cообщение" maxlength="550"></textarea>
+            </label>
+            <label class="form__label">
+              <span class="sr-only">Название проекта</span>
+              <input type="url" name="url" id="url" placeholder="Сайт компании">
+            </label>
+          </div>
+          <div class="form__actions">
+            <label class="form__agreement">
+              <input type="checkbox" name="agreement" id="form-agreement" required>
+              <span>Нажимая кнопку отправить, вы даете согласие на обработку <a class="link link--underline" href="">персональных данных</a></span>
+            </label>
+            <button class="form__button button button--primary-color" type="submit">зарегистрироваться  ↗</button>
+          </div>
+        </form>
+      </div>
+      <div class="panel-layout__item panel-layout__item--half">
+        <div class="invite-box">
+          <h2 class="invite-box__heading heading heading--primary">Отправить приглашение</h2>
+          <p class="text text--offset">Скопируйте и отправьте ссылку</p>
+          <div class="text-copy">
+            <button class="text-copy__button" aria-labelledby="invite" aria-label="Копировать ссылку на приглашение">
+              <span class="text-copy__label" role="tooltip">Скопировать ссылку</span>
+              <svg class="text-copy__icon" aria-hidden="true" width="24" height="24">
+                <use xlink:href="img/sprite.svg#copy"></use>
+              </svg>
+            </button>
+            <input class="text-copy__input" id="invite" value="http://positive-changes.ru/ref12968694" readonly>
+          </div>
+        </div>
+      </div>
+      <div class="panel-layout__item panel-layout__item--half">
+        <div class="export-box">
+          <h2 class="export-box__heading heading heading--primary">Экспорт данных</h2>
+          <p class="text text--offset">Нажимайте на кнопку с соответствующим форматом</p>
+          <ul class="export-box__attachments attachments" role="list">
+            <li class="attachments__item">
+              <a class="attachment" href="attachments/5g45d41v5df4g5g2d5.pdf">
+                <span class="attachment__text">Краткая версия без логотипа</span>
+                <span class="attachment__meta">PDF, 4.5 мБ</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+            </li>
+            <li class="attachments__item">
+              <a class="attachment" href="attachments/5g45d4f4g5g2d5.xls">
+                <span class="attachment__text">Краткая версия без логотипа</span>
+                <span class="attachment__meta">XLS, 4.5 мБ</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+            </li>
+          </ul>
+          <a class="export-box__button button button--primary-color button--full-width" href="" download="">
+            <svg aria-hidden="true" width="12" height="12">
+              <use xlink:href="img/sprite.svg#download"></use>
+            </svg>
+            Скачать выбранный файл
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  @include('partials/footer.html')
+</body>
+
+</html>

@@ -1,7 +1,16 @@
 .form {
+  --placeholder: rgba(var(--primary-color-rgb), 1.0);
   font-size: 14px;
   font-weight: 500;
-  --placeholder: rgba(var(--primary-color-rgb), 1.0);
+  max-width: 545px;
+
+  &--box {
+    box-shadow: 8px 8px 16px #DFDFDF;
+    border-radius: 40px;
+    background-color:var(--light-color);
+    padding-inline:39px 32px;
+    padding-block: 49px;
+  }
 
   &__group {
     display: flex;
@@ -13,11 +22,11 @@
   input:not([type="checkbox"]):not([type="radio"]),
   textarea {
     border: 1.5px solid var(--border-color, rgba(var(--primary-color-rgb), 1.0));
-    border-radius: 35px;
+    border-radius: 33px;
     width: 100%;
     color: var(--second-color);
     background-color: transparent;
-    padding: 10px 14px;
+    padding: 11px 14px;
     line-height: 1.45;
     font: inherit;
 
@@ -40,17 +49,31 @@
       --border-color:#D7D7E1;
       --placeholder:#738296;
     }
+
+    &.invalid {
+      --border-color:red;
+      --placeholder:red;
+
+      & + .form__requirement {
+        display: flex;
+        gap: 8px;
+        color:red;
+      }
+    }
   }
 
   textarea {
     width: 100%;
     resize: none;
-    border: 1.5px solid #D7D7E1;
-    border-radius: 36px;
+    border-radius: 16px;
     font: inherit;
-    min-height: 141px;
+    min-height: 112px;
   }
-
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
   &__requirement {
     display: none;
   }
@@ -58,11 +81,11 @@
   &__actions {
     display: flex;
     flex-direction: column;
+    gap: 24px;
   }
 
   &__agreement {
     display: flex;
-    margin: 25px 0;
     line-height: 1.19;
     gap: 10px;
     max-width: 80%;
@@ -74,7 +97,6 @@
   }
 
   &__button {
-    margin-bottom: 23px;
     font-size: 18px;
     &:last-child {
       margin-bottom: 0;
@@ -84,7 +106,6 @@
   &__password-recovery {
     display: block;
     text-align: center;
-    margin-top: 23px;
     color:#738296;
     line-height: 1.45;
   }

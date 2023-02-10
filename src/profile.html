@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html',{
+  "title":"фабрика позитивных изменений",
+  "description":"Создаем в обществе вектор развития, направленного на эволюцию самого человека, и разворот движения общества в сторону данного вектора",
+  "keywords":"фабрика, изменения",
+})
+
+<body class="page__body">
+  @include('partials/header.html',
+  {
+    "class":"header--bg",
+    "login":"true",
+    "home":"href='/'",
+  })
+  <main class="main container">
+    <h1 class="sr-only">Добавить проект</h1>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list" role="list">
+        @loop('partials/breadcrumb.html', [
+          {
+            "currentClass":"",
+            "ariaCurrent": "",
+            "linkText":"Все проекты",
+            "link":"href='projects.html'",
+          },
+          {
+            "currentClass":"breadcrumb__link--current",
+            "ariaCurrent": "aria-location='current'",
+            "linkText":"Изменения профиля",
+            "link":"",
+          },
+        ])
+      </ol>
+    </nav>
+    <form class="form form--box" action="" method="post">
+      <div class="form__group">
+        <div class="media-uploader">
+          <button class="media-uploader__button media-uploader__button--rounded js-media-uploader"
+            type="button"
+            data-thumbnail-method="crop"
+            data-thumbnail-width="112"
+            data-thumbnail-height="112"
+            data-accepted-files="image/png, image/svg+xml"
+            data-file="img/elena.png"
+            data-url="upload.php">
+            <!-- data-file="img/elena.png" - это загруженный файл на сервере, после загрузки файла складываем в него-->
+            <svg aria-hidden="true" width="16" height="16">
+              <use xlink:href="img/sprite.svg#attachment"></use>
+            </svg>
+            <span class="media-uploader__text media-uploader__text--main">Изменить логотип</span>
+            <span class="media-uploader__text media-uploader__text--opacity"> PNG или SVG (не более 2 Мб)</span>
+          </button>
+          <div class="media-uploader__preview-container media-uploader__preview-container--circle"></div>
+        </div>
+        <label class="form__label">
+          <span class="sr-only">ФИО</span>
+          <input type="text" name="project-name" id="project-name" placeholder="ФИО *" value="Елена Ивановна" required>
+        </label>
+        <label class="form__label">
+          <span class="sr-only">Введите почту</span>
+          <input type="email" name="email" id="email" placeholder="Email" value="the_agency_name@agency.com" required>
+        </label>
+        <label class="form__label">
+          <span class="sr-only">Введите Пароль</span>
+          <input type="password" name="password" id="password" placeholder="Пароль" value="passwd" required>
+        </label>
+        <label class="form__label">
+          <span class="sr-only">Введите Пароль</span>
+          <input type="password" name="retype-password" id="retype-password" placeholder="Повторите пароль" required>
+        </label>
+        <label class="form__label">
+          <textarea name="message" id="message" rows="2" placeholder="Cообщение" maxlength="550">Магазин здоровой еды</textarea>
+        </label>
+        <label class="form__label">
+          <span class="sr-only">Название проекта</span>
+          <input type="url" name="url" id="url" placeholder="Сайт компании">
+        </label>
+      </div>
+      <div class="form__actions">
+        <label class="form__agreement">
+          <input type="checkbox" name="agreement" id="form-agreement" required checked>
+          <span>Нажимая кнопку отправить, вы даете согласие на обработку <a class="link link--underline" href="">персональных данных</a></span>
+        </label>
+        <button class="form__button button button--primary-color" type="submit">зарегистрироваться  ↗</button>
+      </div>
+    </form>
+  </main>
+  @include('partials/footer.html')
+</body>
+
+</html>

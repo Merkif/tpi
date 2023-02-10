@@ -1,4 +1,4 @@
-<header class="header container">
+<header class="header container @class">
   <a class="header__logo logo" @home>
     <img class="logo__img" src="img/logo.svg" width="128" height="32" alt="Логотип фабрики позитивных изменений">
   </a>
@@ -18,7 +18,7 @@
   }
 
   @if (login === "false") {
-    <a class="header__login scroll" href="#forms">
+    <a class="header__login" href="projects.html">
       <svg aria-hidden="true" width="15" height="15">
         <use xlink:href="img/sprite.svg#user"></use>
       </svg>
@@ -28,7 +28,7 @@
 
   @if (login === "true") {
     <div class="user-menu">
-      <a class="user-menu__link user-menu__link--main" href="">
+      <a class="user-menu__link user-menu__link--main" href="profile.html">
         <picture class="user-menu__picture">
           <source srcset="img/elena.webp" type="image/webp">
           <img class="user-menu__avatar" loading="lazy" src="img/elena.jpg" width="32" height="32" alt="Елена Иванова">

@@ -97,7 +97,7 @@
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    &.dz-success {
+    &.dz-complete {
       position: relative;
       &::after {
         content:url("data:image/svg+xml,%3Csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 1.08862L4 7.08862L1 4.31939' stroke='%23283C55' stroke-width='1.5'/%3E%3C/svg%3E%0A");

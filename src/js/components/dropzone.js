@@ -6,9 +6,9 @@ const acceptedFiles = mediaUploader?.dataset.acceptedFiles || "image/png, image/
 const thumbnailMethod = mediaUploader?.dataset.thumbnailMethod || "crop";
 const thumbnailWidth = mediaUploader?.dataset.thumbnailWidth || 112;
 const thumbnailHeight = mediaUploader?.dataset.thumbnailHeight || 112;
+let serverFile = mediaUploader?.dataset.file;
 
-
-if(mediaUploader) {
+if (mediaUploader) {
   let mediaUploaderInit = new Dropzone(mediaUploader, {
     url: mediaUploaderUrl,
     acceptedFiles: acceptedFiles,
@@ -35,7 +35,20 @@ if(mediaUploader) {
       done();
     },
     init: function () {
-      this.on("addedfile", function () {
+
+      if(serverFile) {
+        var mockFile = { name: "avatar", size: 123 };
+        let callback = null;
+        let crossOrigin = null;
+        let resizeThumbnail = false;
+        this.displayExistingFile(mockFile, serverFile, callback, crossOrigin, resizeThumbnail);
+        this.previewsContainer.classList.add('media-uploader__preview-container--gap');
+      }
+
+      this.on("addedfile", function (file) {
+        if(serverFile) {
+          this.removeFile(mockFile)
+        }
         this.previewsContainer.classList.add('media-uploader__preview-container--gap');
         while (this.files.length > this.options.maxFiles) {
           this.removeFile(this.files[0]);

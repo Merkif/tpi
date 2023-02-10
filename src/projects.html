@@ -10,8 +10,9 @@
 <body class="page__body">
   @include('partials/header.html',
   {
+    "class":"header--bg",
     "login":"true",
-    "home":"href='/'"
+    "home":"href='index.html'",
   })
   <main class="main container">
     <h1 class="sr-only">Все проекты</h1>
@@ -32,7 +33,7 @@
         {
           "picture":"false",
           "title": "Добавить проект",
-          "link":"/create-project.html",
+          "link":"create-project.html",
           "class":"card--create",
         },
         {

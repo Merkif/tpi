@@ -1,0 +1,90 @@
+<li class="q-cards__item">
+  <div class="q-card">
+    <h3 class="q-card__title">@title</h3>
+    <ul class="q-card__list" role="list">
+      @if (items.item1 === "true") {
+      <li class="q-card__item q-card__item--success">
+        <span class="q-card__icon">
+          <svg aria-hidden="true" width="11" height="9">
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+        </span>
+        <span class="q-card__text">Ответ</span>
+      </li>
+      }
+      @if (items.item1 === "false") {
+      <li class="q-card__item q-card__item--error">
+        <span class="q-card__icon">
+          <svg aria-hidden="true" width="9" height="9">
+            <use xlink:href="img/sprite.svg#cross"></use>
+          </svg>
+        </span>
+        <span class="q-card__text">Ответ</span>
+      </li>
+      }
+      @if (items.item2 === "true") {
+      <li class="q-card__item q-card__item--success">
+        <span class="q-card__icon">
+          <svg aria-hidden="true" width="11" height="9">
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+        </span>
+        <span class="q-card__text">Прикреп. файлы</span>
+      </li>
+      }
+      @if (items.item2 === "false") {
+      <li class="q-card__item q-card__item--error">
+        <span class="q-card__icon">
+          <svg aria-hidden="true" width="9" height="9">
+            <use xlink:href="img/sprite.svg#cross"></use>
+          </svg>
+        </span>
+        <span class="q-card__text">Прикреп. файлы</span>
+      </li>
+      }
+      @if (items.item3 === "half") {
+      <li class="q-card__item q-card__item--success-half">
+        <span class="q-card__icon">
+          <svg aria-hidden="true" width="11" height="9">
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+        </span>
+        <span class="q-card__text q-card__value q-card__value--checked">ИО</span>
+        <svg aria-hidden="true" width="6" height="6">
+          <use xlink:href="img/sprite.svg#cross"></use>
+        </svg>
+        <span class="q-card__text q-card__value">ИД</span>
+      </li>
+      }
+      @if (items.item3 === "true") {
+      <li class="q-card__item q-card__item--success">
+        <span class="q-card__icon">
+          <svg aria-hidden="true" width="11" height="9">
+            <use xlink:href="img/sprite.svg#mark"></use>
+          </svg>
+        </span>
+        <span class="q-card__text q-card__value q-card__value--checked">ИО</span>
+        <svg aria-hidden="true" width="6" height="6">
+          <use xlink:href="img/sprite.svg#cross"></use>
+        </svg>
+        <span class="q-card__text q-card__value q-card__value--checked">ИД</span>
+      </li>
+      }
+      @if (items.item3 === "false") {
+      <li class="q-card__item q-card__item--error">
+        <span class="q-card__icon">
+          <svg aria-hidden="true" width="9" height="9">
+            <use xlink:href="img/sprite.svg#cross"></use>
+          </svg>
+        </span>
+        <span class="q-card__text q-card__value">ИО</span>
+        <svg aria-hidden="true" width="6" height="6">
+          <use xlink:href="img/sprite.svg#cross"></use>
+        </svg>
+        <span class="q-card__text q-card__value">ИД</span>
+      </li>
+      }
+    </ul>
+    <a class="q-card__button button button--primary-color" href="@link">Перейти к вопросу</a>
+  </div>
+</li>

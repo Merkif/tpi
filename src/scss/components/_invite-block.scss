@@ -1,0 +1,11 @@
+.invite-box {
+  box-shadow: 8px 8px 16px #dfdfdf;
+  border-radius: 40px;
+  background-color: var(--light-color);
+  padding-inline: 48px;
+  padding-block: 30px 34px;
+
+  &__heading {
+    margin-bottom: 10px;
+  }
+}
