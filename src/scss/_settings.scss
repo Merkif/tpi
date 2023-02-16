@@ -27,6 +27,7 @@ html {
   font-weight: 500;
   display: flex;
   flex-direction: column;
+  background-color:var(--bg-color, #fff);
 }
 
 img {
@@ -111,15 +112,17 @@ p+p {
   margin-top: 24px;
 }
 
-p+p {
-  margin-top: 24px;
-}
-
 .link {
   color: rgba(var(--primary-color-rgb), 1.0);
   font-size: inherit;
   &--underline {
     text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+  &--dashed {
+    text-decoration-style: dashed;
   }
 
   &:hover,
@@ -137,4 +140,10 @@ p+p {
   &--offset {
     margin-bottom: 17px;
   }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }

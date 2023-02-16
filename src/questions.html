@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html',{
+  "title":"фабрика позитивных изменений",
+  "description":"Создаем в обществе вектор развития, направленного на эволюцию самого человека, и разворот движения общества в сторону данного вектора",
+  "keywords":"фабрика, изменения",
+})
+
+<body class="page__body" style="--bg-color: #FBFBFB;">
+  @include('partials/header.html',
+  {
+    "class":"header--bg",
+    "login":"true",
+    "home":"href='/'",
+  })
+  <main class="main container">
+    <h1 class="sr-only">Добавить проект</h1>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list" role="list">
+        @loop('partials/breadcrumb.html', [
+          {
+            "currentClass":"",
+            "ariaCurrent": "",
+            "linkText":"Все проекты",
+            "link":"href='projects.html'",
+          },
+          {
+            "currentClass":"",
+            "ariaCurrent": "",
+            "linkText":"Ничего лишнего",
+            "link":"href='projects-1.html'",
+          },
+          {
+            "currentClass":"breadcrumb__link--current",
+            "ariaCurrent": "aria-location='current'",
+            "linkText":"Вопросы",
+            "link":"",
+          },
+        ])
+      </ol>
+    </nav>
+    <div class="questions">
+      <div class="questions__header">
+        <ul class="questions__nav" role="list">
+          <li class="questions__item">
+            <a class="questions__link" href="#step-1">1</a>
+          </li>
+          <li class="questions__item">
+            <a class="questions__link" href="#step-2">2</a>
+          </li>
+          <li class="questions__item">
+            <a class="questions__link" href="#step-3">3</a>
+          </li>
+          <li class="questions__item">
+            <a class="questions__link" href="#step-4">4</a>
+          </li>
+          <li class="questions__item">
+            <a class="questions__link" href="#step-5">5</a>
+          </li>
+          <li class="questions__item">
+            <a class="questions__link" href="#step-6">6</a>
+          </li>
+          <li class="questions__item">
+            <a class="questions__link" href="#step-7">7</a>
+          </li>
+          <li class="questions__item">
+            <a class="questions__link" href="#step-8">8</a>
+          </li>
+          <li class="questions__item">
+            <a class="questions__link" href="#step-9">9</a>
+          </li>
+          <li class="questions__item">
+            <a class="questions__link" href="#step-10">10</a>
+          </li>
+        </ul>
+        <div class="questions__buttons">
+          <a class="button button--light-color" href="dashboard.html">Дашборд</a>
+          <button class="questions__button questions__button--prev button button--light-color" type="button">Назад</button>
+          <button class="questions__button questions__button--next button button--primary-color" type="button">Далее</button>
+          <button class="questions__button button button--primary-color questions__button--submit" type="submit" form="questions-form">Завершить</button>
+        </div>
+      </div>
+      <form class="questions__form" method="post" id="questions-form" enctype="multipart/form-data">
+        <div class="swiper questions-slider">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <!-- Что бы отключить все поля достаточно добавить disabled fieldset-у, вырубаются все поля, и можно дополнительно readonly выставить для полей.  -->
+            <fieldset class="swiper-slide questions-slider__item" data-hash="step-1" disabled>
+              <div class="questions-slider__header">
+                <legend class="questions-slider__heading heading heading--primary">Шаг 1</legend>
+                <a class="questions-slider__materials link link--underline link--dashed primary-color primary-color--opacity" href="">Справочные материалы</a>
+                <button class="tooltip" type="button">
+                  <svg aria-hidden="true" width="12" height="12">
+                    <use xlink:href="img/sprite.svg#helper-2"></use>
+                  </svg>
+                  <span>Подсказка</span>
+                  <span class="tooltip__label">Lorem ipsum dolor sit amet.</span>
+                </button>
+              </div>
+              <div class="questions-slider__content">
+                <p class="questions-slider__desc">Какая сфера жизни и деятельности людей подлежит внесению позитивных изменений благодаря проекту?</p>
+                <div class="textarea textarea--offset">
+                  <textarea class="textarea__field" name="step-1-answer" placeholder="Ваш ответ (не менее 12 символов)" minlength="12">Качественные результаты описывают положительные изменения после проведения мероприятия. Результаты всех мероприятий – это результат всего проекта. Мы с вами спланировали мероприятия для решения задачи подготовки волонтеров. Каждое мероприятие (действие) даст нам результат. Качественные результаты описывают положительные изменения после проведения мероприятия. Результаты всех мероприятий – это результат всего проекта. Мы с вами спланировали мероприятия для решения задачи</textarea>
+                  <div class="file-loader">
+                    <ul class="file-loader__files" role="list"></ul>
+                    <div class="file-loader__input-wrapper">
+                      <label class="file-loader__label">
+                        <svg aria-hidden="true" width="13" height="14">
+                          <use xlink:href="img/sprite.svg#attachment"></use>
+                        </svg>
+                        <span class="file-loader__text">прикрепить файл (макс. 5 файлов до 10 мб)</span>
+                        <input class="file-loader__input" type="file" name="files[]" id="file-1" multiple accept=".pdf">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <p>Определите из предложенных вариантов цели устойчивого развития проекта?</p>
+                <div class="flex flex--wrap flex--i-center flex--gap">
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="step-1-target-1">
+                    <span>Цель первая</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="step-1-target-2">
+                    <span>Цель Вторая</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="step-1-target-3">
+                    <span>Цель 3</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="step-1-target-4">
+                    <span>Цель 4</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="step-1-target-5">
+                    <span>Цель 5</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="step-1-target-6">
+                    <span>Цель шестая</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="step-1-target-7">
+                    <span>Цель 7</span>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="swiper-slide questions-slider__item" data-hash="step-2">
+              <div class="questions-slider__header">
+                <legend class="questions-slider__heading heading heading--primary">Шаг 2</legend>
+                <a class="questions-slider__materials link link--underline link--dashed primary-color primary-color--opacity" href="">Справочные материалы</a>
+                <button class="tooltip" type="button">
+                  <svg aria-hidden="true" width="12" height="12">
+                    <use xlink:href="img/sprite.svg#helper-2"></use>
+                  </svg>
+                  <span>Подсказка</span>
+                  <span class="tooltip__label">Lorem ipsum dolor sit amet.</span>
+                </button>
+              </div>
+              <div class="questions-slider__content">
+                <p class="questions-slider__desc">Жизнь какой целевой аудитории (или аудиторий) изменится в результате реализации проекта?</p>
+                <div class="textarea textarea--offset">
+                  <textarea class="textarea__field" name="step-1-answer" placeholder="Ваш ответ (не менее 12 символов)" minlength="12"></textarea>
+                  <div class="file-loader">
+                    <ul class="file-loader__files" role="list"></ul>
+                    <div class="file-loader__input-wrapper">
+                      <label class="file-loader__label">
+                        <svg aria-hidden="true" width="13" height="14">
+                          <use xlink:href="img/sprite.svg#attachment"></use>
+                        </svg>
+                        <span class="file-loader__text">прикрепить файл (макс. 5 файлов до 10 мб)</span>
+                        <input class="file-loader__input" type="file" name="files[]" id="file-2" multiple accept=".pdf">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="swiper-slide questions-slider__item" data-hash="step-3">
+              <div class="questions-slider__header">
+                <legend class="questions-slider__heading heading heading--primary">Шаг 3</legend>
+                <a class="questions-slider__materials link link--underline link--dashed primary-color primary-color--opacity" href="">Справочные материалы</a>
+                <button class="tooltip" type="button">
+                  <svg aria-hidden="true" width="12" height="12">
+                    <use xlink:href="img/sprite.svg#helper-2"></use>
+                  </svg>
+                  <span>Подсказка</span>
+                  <span class="tooltip__label">Lorem ipsum dolor sit amet.</span>
+                </button>
+              </div>
+              <div class="questions-slider__content">
+                <p class="questions-slider__desc">На вклад в решение какой проблемы в жизни целевой аудитории (сообщества) направлен проект? </p>
+                <div class="textarea textarea--offset">
+                  <textarea class="textarea__field" name="step-1-answer" placeholder="Ваш ответ (не менее 12 символов)" minlength="12"></textarea>
+                  <div class="file-loader">
+                    <ul class="file-loader__files" role="list"></ul>
+                    <div class="file-loader__input-wrapper">
+                      <label class="file-loader__label">
+                        <svg aria-hidden="true" width="13" height="14">
+                          <use xlink:href="img/sprite.svg#attachment"></use>
+                        </svg>
+                        <span class="file-loader__text">прикрепить файл (макс. 5 файлов до 10 мб)</span>
+                        <input class="file-loader__input" type="file" name="files[]" id="file-3" multiple accept=".pdf">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="swiper-slide questions-slider__item" data-hash="step-4">
+              <div class="questions-slider__header">
+                <legend class="questions-slider__heading heading heading--primary">Шаг 4</legend>
+                <a class="questions-slider__materials link link--underline link--dashed primary-color primary-color--opacity" href="">Справочные материалы</a>
+                <button class="tooltip" type="button">
+                  <svg aria-hidden="true" width="12" height="12">
+                    <use xlink:href="img/sprite.svg#helper-2"></use>
+                  </svg>
+                  <span>Подсказка</span>
+                  <span class="tooltip__label">Lorem ipsum dolor sit amet.</span>
+                </button>
+              </div>
+              <div class="questions-slider__content">
+                <p class="questions-slider__desc">Каковы причины существования указанной проблемы (проблем) - в знаниях (представлениях), отношении, поведении целевой аудитории (аудиторий) или стейкхолдеров?</p>
+                <div class="textarea textarea--offset">
+                  <textarea class="textarea__field" name="step-1-answer" placeholder="Ваш ответ (не менее 12 символов)" minlength="12"></textarea>
+                  <div class="file-loader">
+                    <ul class="file-loader__files" role="list"></ul>
+                    <div class="file-loader__input-wrapper">
+                      <label class="file-loader__label">
+                        <svg aria-hidden="true" width="13" height="14">
+                          <use xlink:href="img/sprite.svg#attachment"></use>
+                        </svg>
+                        <span class="file-loader__text">прикрепить файл (макс. 5 файлов до 10 мб)</span>
+                        <input class="file-loader__input" type="file" name="files[]" id="file-4" multiple accept=".pdf">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="swiper-slide questions-slider__item" data-hash="step-5">
+              <div class="questions-slider__header">
+                <legend class="questions-slider__heading heading heading--primary">Шаг 5</legend>
+                <a class="questions-slider__materials link link--underline link--dashed primary-color primary-color--opacity" href="">Справочные материалы</a>
+                <button class="tooltip" type="button">
+                  <svg aria-hidden="true" width="12" height="12">
+                    <use xlink:href="img/sprite.svg#helper-2"></use>
+                  </svg>
+                  <span>Подсказка</span>
+                  <span class="tooltip__label">Lorem ipsum dolor sit amet.</span>
+                </button>
+              </div>
+              <div class="questions-slider__content">
+                <p class="questions-slider__desc">Есть ли другие причины существования проблемы, помимо указанных выше?</p>
+                <div class="textarea textarea--offset">
+                  <textarea class="textarea__field" name="step-1-answer" placeholder="Ваш ответ (не менее 12 символов)" minlength="12"></textarea>
+                  <div class="file-loader">
+                    <ul class="file-loader__files" role="list"></ul>
+                    <div class="file-loader__input-wrapper">
+                      <label class="file-loader__label">
+                        <svg aria-hidden="true" width="13" height="14">
+                          <use xlink:href="img/sprite.svg#attachment"></use>
+                        </svg>
+                        <span class="file-loader__text">прикрепить файл (макс. 5 файлов до 10 мб)</span>
+                        <input class="file-loader__input" type="file" name="files[]" id="file-5" multiple accept=".pdf">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="swiper-slide questions-slider__item" data-hash="step-6">
+              <div class="questions-slider__header">
+                <legend class="questions-slider__heading heading heading--primary">Шаг 6</legend>
+                <a class="questions-slider__materials link link--underline link--dashed primary-color primary-color--opacity" href="">Справочные материалы</a>
+                <button class="tooltip" type="button">
+                  <svg aria-hidden="true" width="12" height="12">
+                    <use xlink:href="img/sprite.svg#helper-2"></use>
+                  </svg>
+                  <span>Подсказка</span>
+                  <span class="tooltip__label">Lorem ipsum dolor sit amet.</span>
+                </button>
+              </div>
+              <div class="questions-slider__content">
+                <p class="questions-slider__desc">Какие мероприятия планируется осуществить для решения проблем(ы) в рамках проекта?</p>
+                <div class="textarea textarea--offset">
+                  <textarea class="textarea__field" name="step-1-answer" placeholder="Ваш ответ (не менее 12 символов)" minlength="12"></textarea>
+                  <div class="file-loader">
+                    <ul class="file-loader__files" role="list"></ul>
+                    <div class="file-loader__input-wrapper">
+                      <label class="file-loader__label">
+                        <svg aria-hidden="true" width="13" height="14">
+                          <use xlink:href="img/sprite.svg#attachment"></use>
+                        </svg>
+                        <span class="file-loader__text">прикрепить файл (макс. 5 файлов до 10 мб)</span>
+                        <input class="file-loader__input" type="file" name="files[]" id="file-6" multiple accept=".pdf">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="events-container" id="events-container">
+                </div>
+                <button class="event-add" type="button">Добавить мероприятие</button>
+              </div>
+            </fieldset>
+            <fieldset class="swiper-slide questions-slider__item" data-hash="step-7">
+              <div class="questions-slider__header">
+                <legend class="questions-slider__heading heading heading--primary">Шаг 7</legend>
+                <a class="questions-slider__materials link link--underline link--dashed primary-color primary-color--opacity" href="">Справочные материалы</a>
+                <button class="tooltip" type="button">
+                  <svg aria-hidden="true" width="12" height="12">
+                    <use xlink:href="img/sprite.svg#helper-2"></use>
+                  </svg>
+                  <span>Подсказка</span>
+                  <span class="tooltip__label">Lorem ipsum dolor sit amet.</span>
+                </button>
+              </div>
+              <div class="questions-slider__content">
+                <p class="questions-slider__desc">На достижение каких непосредственных результатов направлено каждое мероприятие?</p>
+                <div class="textarea textarea--offset">
+                  <textarea class="textarea__field" name="step-1-answer" placeholder="Ваш ответ (не менее 12 символов)" minlength="12"></textarea>
+                  <div class="file-loader">
+                    <ul class="file-loader__files" role="list"></ul>
+                    <div class="file-loader__input-wrapper">
+                      <label class="file-loader__label">
+                        <svg aria-hidden="true" width="13" height="14">
+                          <use xlink:href="img/sprite.svg#attachment"></use>
+                        </svg>
+                        <span class="file-loader__text">прикрепить файл (макс. 5 файлов до 10 мб)</span>
+                        <input class="file-loader__input" type="file" name="files[]" id="file-7" multiple accept=".pdf">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex--wrap flex--i-center flex--gap">
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="step-1-target-1">
+                    <span>Индекс обоснованности <b>(ИО)</b></span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="step-1-target-2">
+                    <span>Индекс доказательности <b>(ИД)</b></span>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="swiper-slide questions-slider__item" data-hash="step-8">
+              <div class="questions-slider__header">
+                <legend class="questions-slider__heading heading heading--primary">Шаг 8</legend>
+                <a class="questions-slider__materials link link--underline link--dashed primary-color primary-color--opacity" href="">Справочные материалы</a>
+                <button class="tooltip" type="button">
+                  <svg aria-hidden="true" width="12" height="12">
+                    <use xlink:href="img/sprite.svg#helper-2"></use>
+                  </svg>
+                  <span>Подсказка</span>
+                  <span class="tooltip__label">Lorem ipsum dolor sit amet.</span>
+                </button>
+              </div>
+              <div class="questions-slider__content">
+                <p class="questions-slider__desc">На достижение каких непосредственных результатов направлено каждое мероприятие?</p>
+                <div class="textarea textarea--offset">
+                  <textarea class="textarea__field" name="step-1-answer" placeholder="Ваш ответ (не менее 12 символов)" minlength="12"></textarea>
+                  <div class="file-loader">
+                    <ul class="file-loader__files" role="list"></ul>
+                    <div class="file-loader__input-wrapper">
+                      <label class="file-loader__label">
+                        <svg aria-hidden="true" width="13" height="14">
+                          <use xlink:href="img/sprite.svg#attachment"></use>
+                        </svg>
+                        <span class="file-loader__text">прикрепить файл (макс. 5 файлов до 10 мб)</span>
+                        <input class="file-loader__input" type="file" name="files[]" id="file-8" multiple accept=".pdf">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="questions-slider__save-button button button--primary-color">Сохранить</button>
+              </div>
+            </fieldset>
+            <fieldset class="swiper-slide questions-slider__item" data-hash="step-9">
+              <div class="questions-slider__header">
+                <legend class="questions-slider__heading heading heading--primary">Шаг 9</legend>
+                <a class="questions-slider__materials link link--underline link--dashed primary-color primary-color--opacity" href="">Справочные материалы</a>
+                <button class="tooltip" type="button">
+                  <svg aria-hidden="true" width="12" height="12">
+                    <use xlink:href="img/sprite.svg#helper-2"></use>
+                  </svg>
+                  <span>Подсказка</span>
+                  <span class="tooltip__label">Lorem ipsum dolor sit amet.</span>
+                </button>
+              </div>
+              <div class="questions-slider__content">
+                <p class="questions-slider__desc">Какие изменения произойдут в сообществах целевой аудитории (аудиторий) – в семье, на территории проживания и т.п., если будут достигнуты указанные выше результаты? </p>
+                <div class="textarea textarea--offset">
+                  <textarea class="textarea__field" name="step-1-answer" placeholder="Ваш ответ (не менее 12 символов)" minlength="12"></textarea>
+                  <div class="file-loader">
+                    <ul class="file-loader__files" role="list"></ul>
+                    <div class="file-loader__input-wrapper">
+                      <label class="file-loader__label">
+                        <svg aria-hidden="true" width="13" height="14">
+                          <use xlink:href="img/sprite.svg#attachment"></use>
+                        </svg>
+                        <span class="file-loader__text">прикрепить файл (макс. 5 файлов до 10 мб)</span>
+                        <input class="file-loader__input" type="file" name="files[]" id="file-9" multiple accept=".pdf">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="swiper-slide questions-slider__item" data-hash="step-10">
+              <div class="questions-slider__header">
+                <legend class="questions-slider__heading heading heading--primary">Шаг 10</legend>
+                <a class="questions-slider__materials link link--underline link--dashed primary-color primary-color--opacity" href="">Справочные материалы</a>
+                <button class="tooltip" type="button">
+                  <svg aria-hidden="true" width="12" height="12">
+                    <use xlink:href="img/sprite.svg#helper-2"></use>
+                  </svg>
+                  <span>Подсказка</span>
+                  <span class="tooltip__label">Lorem ipsum dolor sit amet.</span>
+                </button>
+              </div>
+              <div class="questions-slider__content">
+                <p class="questions-slider__desc">Какие еще изменения – возможно, на уровне всего города, региона, страны или даже всего мира – можно ожидать и при каких условиях (например – увеличении охвата проекта и т.п.)?</p>
+                <div class="textarea textarea--offset">
+                  <textarea class="textarea__field" name="step-1-answer" placeholder="Ваш ответ (не менее 12 символов)" minlength="12"></textarea>
+                  <div class="file-loader">
+                    <ul class="file-loader__files" role="list"></ul>
+                    <div class="file-loader__input-wrapper">
+                      <label class="file-loader__label">
+                        <svg aria-hidden="true" width="13" height="14">
+                          <use xlink:href="img/sprite.svg#attachment"></use>
+                        </svg>
+                        <span class="file-loader__text">прикрепить файл (макс. 5 файлов до 10 мб)</span>
+                        <input class="file-loader__input" type="file" name="files[]" id="file-10" multiple accept=".pdf">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script>
+  </script>
+  @include('partials/footer.html')
+  <template id="event-template">
+    <div class="event">
+      <h2 class="event__title heading heading--secondary"></h2>
+      <label class="event__label">
+        <span class="sr-only">Название мероприятия</span>
+        <input class="event__input event__input--title" name="event-title" type="text" placeholder="Название мероприятия">
+      </label>
+      <label class="event__label event__label--date">
+        <svg class="event__icon" aria-hidden="true" width="12" height="14">
+          <use xlink:href="img/sprite.svg#calendar"></use>
+        </svg>
+        <span class="sr-only">Укажите дату начала мероприятия</span>
+        <input class="event__input event__input--date-start" name="event-start" type="text" placeholder="Укажите дату начала" onfocus="(this.type='date')" title="Укажите дату начала мероприятия">
+      </label>
+      <label class="event__label event__label--date">
+        <svg class="event__icon" aria-hidden="true" width="12" height="14">
+          <use xlink:href="img/sprite.svg#calendar"></use>
+        </svg>
+        <span class="sr-only">Укажите дату окончания мероприятия</span>
+        <input class="event__input event__input--date-end" name="event-end" type="text" placeholder="Укажите дату окончания" onfocus="(this.type='date')" title="Укажите дату окончания мероприятия">
+      </label>
+    </div>
+  </template>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+.tooltip {
+  border:none;
+  background-color: #F0F1F2;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+  padding: 4px 16px 4px 16px;
+  outline: none;
+  font: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color:rgba(var(--primary-color-rgb), 0.5);
+  border-radius:32px;
+  transition: color 0.2s linear;
+
+  &__label {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 50%;
+    padding: 10px 10px;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: normal;
+    white-space: nowrap;
+    text-transform: none;
+    background-color: rgba(var(--primary-color-rgb), 1.0);
+    border-radius: 3px;
+    transform: translateX(-50%);
+    display: none;
+    line-height: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(100% - 2px);
+      right: 0;
+      left: 0;
+      width: 26px;
+      height: 11px;
+      margin: 0 auto 0;
+      background-color: inherit;
+      clip-path: polygon(0 0,100%0,50% 100%);
+    }
+  }
+
+  @include hover-focus-visible {
+    color:rgba(var(--primary-color-rgb), 0.9);
+  }
+
+  &:hover &__label,
+  &:focus &__label {
+    display: block;
+  }
+}

@@ -1,0 +1,15 @@
+.flex {
+  display: flex;
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--i-center {
+    align-items: center;
+  }
+
+  &--gap {
+    gap:var(--gap, 10px 24px);
+  }
+}

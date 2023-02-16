@@ -22,6 +22,11 @@
 @import "./components/copy";
 @import "./components/export-box";
 @import "./components/attachments";
+@import "./components/questions";
+@import "../../node_modules/swiper/swiper-bundle.min";
+@import "./components/tooltip";
+@import "./components/file-loader";
+@import "./components/events";
 
 
 
@@ -34,5 +39,10 @@
 //colors
 @import "./components/colors";
 
+//flex
+@import "./components/flex";
+
+//disabled
+@import "./components/disabled";
 //animations
 @import "./components/animations";

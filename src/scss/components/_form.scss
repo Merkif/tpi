@@ -21,45 +21,7 @@
 
   input:not([type="checkbox"]):not([type="radio"]),
   textarea {
-    border: 1.5px solid var(--border-color, rgba(var(--primary-color-rgb), 1.0));
-    border-radius: 33px;
-    width: 100%;
-    color: var(--second-color);
-    background-color: transparent;
-    padding: 11px 14px;
-    line-height: 1.45;
-    font: inherit;
-
-    &::-webkit-input-placeholder {
-      color: var(--placeholder);
-    }
-
-    &::-moz-placeholder {
-      color: var(--placeholder);
-    }
-
-    &:-ms-input-placeholder {
-      color: var(--placeholder);
-    }
-
-    &:-moz-placeholder {
-      color: var(--placeholder);
-    }
-    &:placeholder-shown {
-      --border-color:#D7D7E1;
-      --placeholder:#738296;
-    }
-
-    &.invalid {
-      --border-color:red;
-      --placeholder:red;
-
-      & + .form__requirement {
-        display: flex;
-        gap: 8px;
-        color:red;
-      }
-    }
+    @include input;
   }
 
   textarea {
@@ -75,6 +37,7 @@
     gap: 8px;
   }
   &__requirement {
+    padding-inline: 14px;
     display: none;
   }
 
@@ -274,5 +237,72 @@
     &:checked {
       --s: .5;
     }
+  }
+}
+
+
+.checkbox-field {
+  display: flex;
+  align-items:center;
+  gap: 9px;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border-radius:4px;
+
+    &::after {
+      width: 5px;
+      height: 9px;
+      left: 5px;
+      top: 2px;
+    }
+  }
+}
+
+
+.textarea {
+  border: 1px solid var(--border, #D7D7E1);
+  border-radius: 24px;
+  padding-inline: 29px;
+  padding-block: 21px 23px;
+  &--offset {
+    margin-block: 18px 34px;
+  }
+
+  &__field {
+    --placeholder:rgba(var(--primary-color-rgb), 0.5);
+    border:none;
+    background-color:transparent;
+    font:inherit;
+    color:inherit;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline: none;
+    min-height: 120px;
+    transition: border 0.2s linear;
+
+    &::-webkit-input-placeholder {
+      color: var(--placeholder);
+    }
+
+    &::-moz-placeholder {
+      color: var(--placeholder);
+    }
+
+    &:-ms-input-placeholder {
+      color: var(--placeholder);
+    }
+
+    &:-moz-placeholder {
+      color: var(--placeholder);
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    --border:rgba(var(--primary-color-rgb), 1.0)
   }
 }

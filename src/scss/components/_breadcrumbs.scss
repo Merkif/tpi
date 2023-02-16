@@ -31,7 +31,8 @@
     transition: opacity 0.2s linear;
     &:not(&--current) {
       @include hover-focus-visible {
-        opacity: 0.5;
+        opacity: 0.8;
+        outline: none;
       }
     }
 

@@ -1,0 +1,49 @@
+@mixin input {
+  box-sizing: border-box;
+  border: 1.5px solid var(--border-color, rgba(var(--primary-color-rgb), 1.0));
+  border-radius: 33px;
+  width: 100%;
+  color: var(--second-color);
+  background-color: transparent;
+  padding: 11px 14px;
+  line-height: 1.45;
+  transition-property: border, color;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  font: inherit;
+
+  &::-webkit-input-placeholder {
+    color: var(--placeholder);
+  }
+
+  &::-moz-placeholder {
+    color: var(--placeholder);
+  }
+
+  &:-ms-input-placeholder {
+    color: var(--placeholder);
+  }
+
+  &:-moz-placeholder {
+    color: var(--placeholder);
+  }
+  &:placeholder-shown {
+    --border-color:#D7D7E1;
+    --placeholder:#738296;
+  }
+
+  &.invalid {
+    --border-color:red;
+    --placeholder:red;
+
+    & + .form__requirement {
+      display: flex;
+      gap: 8px;
+      color:red;
+    }
+  }
+
+  &:hover {
+    --border-color:rgba(var(--primary-color-rgb), 1.0);
+  }
+}

@@ -1,3 +1,27 @@
 .accent-color {
-  color:rgba(var(--secondary-color-rgb), 1.0)
+  color:rgba(var(--secondary-color-rgb), var(--alpha, 1.0));
+  transition: color 0.2s linear;
+
+  &--opacity {
+    --alpha:0.5;
+
+    @include hover-focus-visible {
+      --alpha:1.0;
+      opacity: 1;
+    }
+  }
+}
+
+.primary-color {
+  color:rgba(var(--primary-color-rgb), var(--alpha, 1.0));
+  transition: color 0.2s linear;
+
+  &--opacity {
+    --alpha:0.5;
+
+    @include hover-focus-visible {
+      --alpha:1.0;
+      opacity: 1;
+    }
+  }
 }

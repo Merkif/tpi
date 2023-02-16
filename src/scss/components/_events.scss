@@ -1,0 +1,119 @@
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 32px;
+}
+.event {
+  display: grid;
+  grid-template-columns: 1fr max-content max-content;
+  gap: 16px 25px;
+  font-size: 14px;
+
+  &__title {
+    user-select: none;
+  }
+
+  &__input {
+    --border-color: #D7D7E1;
+    --placeholder: #738296;
+    min-width: 240px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    @include input;
+
+    &::-webkit-calendar-picker-indicator {
+      opacity: 0;
+      cursor: pointer;
+      padding: 0 5px;
+    }
+
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+
+  &__label {
+    position: relative;
+
+    &--date {
+      display: flex;
+    }
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 19px;
+    transform: translateY(-50%);
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin-bottom: 0;
+  }
+}
+
+
+.event-add {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font: inherit;
+  font-size: 14px;
+  color: rgba(var(--primary-color-rgb), 1.0);
+  gap: 16px;
+  position: relative;
+  border: 1px dashed rgba(var(--primary-color-rgb), 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  font-weight: 500;
+  background-color: #F9F9FA;
+  box-sizing: border-box;
+  transition: border 0.2s linear;
+  cursor: pointer;
+
+  &::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath fill='%23283C55' d='M15.512 7.458V8.76H8.663v6.887h-1.34V8.76H.476v-1.3h6.849V.57h1.339v6.887h6.849Z'/%3E%3C/svg%3E");
+    ;
+  }
+
+  @include hover-focus-visible {
+    border: 1px dashed rgba(var(--primary-color-rgb), 1.0);
+  }
+}
+
+.event-menu {
+  z-index: 9999;
+
+  &__button {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+    border:transparent;
+    background-color:#F0F1F2;
+    padding: 10px 10px;
+    border-radius:10px;
+    font: inherit;
+    color:rgba(var(--secondary-color-rgb), 1.0);
+    position: relative;
+    border:1px solid rgba(var(--secondary-color-rgb), 0.8);
+    transition: transform 0.2s linear;
+    cursor: pointer;
+
+    &::after {
+      content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='8' fill='none'%3E%3Cpath stroke='%23FA0A32' stroke-width='1.5' d='m1 .625 6.75 6.75m0-6.75L1 7.375'/%3E%3C/svg%3E");
+    }
+  }
+}
