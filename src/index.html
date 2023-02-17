@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="page">
+<html lang="ru" class="page disable-scroll" id="page">
 
 @include('partials/head.html',{
   "title":"фабрика позитивных изменений",
@@ -9,9 +9,10 @@
 
 <body class="page__body">
   @include('partials/header.html', {
+    "logoClass":"scroll",
     "class":"",
     "login":"false",
-    "home":"",
+    "home":"href=#page",
   })
   <main class="main">
     @include('partials/hero-section.html')

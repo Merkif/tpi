@@ -3,7 +3,9 @@
   font-size: 14px;
   font-weight: 500;
   max-width: 545px;
-
+  &--recovery {
+    width: 332px;
+  }
   &--box {
     box-shadow: 8px 8px 16px #DFDFDF;
     border-radius: 40px;
@@ -45,6 +47,10 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    &--recovery {
+      gap: 8px;
+    }
   }
 
   &__agreement {
@@ -60,7 +66,6 @@
   }
 
   &__button {
-    font-size: 18px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -304,5 +309,24 @@
   &:hover,
   &:focus-within {
     --border:rgba(var(--primary-color-rgb), 1.0)
+  }
+}
+
+@include mobile {
+  .form {
+    &__actions {
+      row-gap: 16px;
+    }
+  }
+}
+
+@include small-mobile {
+  .form {
+    &__group {
+      margin-bottom: 16px;
+    }
+    &__agreement {
+      max-width: 100%;
+    }
   }
 }

@@ -1,0 +1,32 @@
+.content {
+  color:rgba(var(--primary-color-rgb), 1.0);
+  display: grid;
+  row-gap: 20px;
+  padding-block-end: 25px;
+
+  &--max-width {
+    max-width: 900px;
+  }
+
+  h1 {
+    margin-bottom: 12px;
+  }
+  p {
+    margin: 0;
+    hyphens: auto;
+  }
+
+  ul, ul {
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 20px;
+    display: grid;
+    row-gap: 8px;
+  }
+
+  &__button {
+    justify-self: start;
+    margin-block-end: 20px;
+    min-width: 160px;
+  }
+}

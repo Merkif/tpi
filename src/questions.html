@@ -8,12 +8,13 @@
 })
 
 <body class="page__body" style="--bg-color: #FBFBFB;">
-  @include('partials/header.html',
-  {
-    "class":"header--bg",
-    "login":"true",
-    "home":"href='/'",
-  })
+    @include('partials/header.html',
+    {
+      "logoClass":"",
+      "class":"header--bg",
+      "login":"true",
+      "home":"href=/",
+    })
   <main class="main container">
     <h1 class="sr-only">Добавить проект</h1>
     <nav class="breadcrumb" aria-label="Breadcrumb">

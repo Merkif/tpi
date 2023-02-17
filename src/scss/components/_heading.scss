@@ -5,12 +5,12 @@
   margin-bottom: 24px;
 
   &--primary {
-    font-size: 32px;
+    font-size: clamp-calc(500px, 1920px, 24px, 32px);
     line-height: 0.95;
   }
 
   &--large {
-    font-size: clamp-calc(375px, 1920px, 40px, 80px);
+    font-size: clamp-calc(490px, 1920px, 56px, 64px);
     line-height: 0.9;
   }
 

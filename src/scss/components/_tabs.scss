@@ -22,8 +22,6 @@
       visibility: hidden;
       transition-duration: 0.1s;
       transition-timing-function: unset;
-      // overflow: hidden;
-      // height: 0;
     }
   }
 }
@@ -52,6 +50,18 @@
       @include hover-focus-visible {
         opacity: 0.5;
       }
+    }
+  }
+}
+
+
+@include mobile {
+  .auth-tabs {
+    &__list {
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 15px;
     }
   }
 }

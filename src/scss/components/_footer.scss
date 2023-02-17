@@ -1,6 +1,8 @@
 .footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items:center;
   gap: 20px 50px;
   padding-block: 55px 35px;
   font-size: 14px;
@@ -14,5 +16,12 @@
     @include hover-focus-visible {
       color:rgba(40, 60, 85, 0.5);
     }
+  }
+}
+
+
+@include small-tablet {
+  .footer {
+    justify-content: center;
   }
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" class="page" id="page">
+
+@include('partials/head.html',{
+  "title":"Восстановление пароля",
+  "description":"Восстановление пароля",
+  "keywords":"Восстановление пароля",
+})
+
+<body class="page__body">
+  @include('partials/header.html', {
+    "logoClass":"",
+    "class":"",
+    "login":"false",
+    "home":"href=index.html",
+  })
+  <main class="main recovery container">
+    <div class="recovery__media">
+      <svg class="recovery__media-svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="354" height="237" fill="none">
+        <g>
+          <path class="rotating" fill="#FA0A32" d="M325.481 156.035c4.885-11.511-2.3-26.508-16.695-37.319 14.403-10.955 21.542-25.48 16.861-37.185-4.681-11.705-20.177-17.131-38.205-14.786 2.413-17.75-2.813-33.587-14.373-38.11-11.511-4.885-26.508 2.3-37.319 16.695-10.955-14.403-25.48-21.542-37.185-16.861-11.705 4.68-17.131 20.177-14.786 38.205-17.75-2.413-33.587 2.813-38.11 14.373-4.885 11.51 2.3 26.508 16.695 37.319-14.403 10.955-21.542 25.48-16.861 37.185 4.681 11.705 20.177 17.131 38.205 14.786-2.413 17.75 2.813 33.587 14.373 38.11 11.511 4.885 26.508-2.3 37.319-16.695 10.955 14.403 25.48 21.542 37.185 16.861 11.705-4.681 17.131-20.177 14.786-38.205 17.75 2.413 33.176-2.5 38.11-14.373Zm-101.658-9.392c-15.348-6.513-22.864-24.506-16.35-39.854 6.513-15.348 24.506-22.864 39.854-16.35 15.348 6.513 22.864 24.506 16.35 39.854-6.513 15.348-24.506 22.864-39.854 16.35Z"/>
+          <path stroke="#283C55" stroke-width="2" d="M119 1.041h234v234H119v-234Z"/>
+        </g>
+        <g>
+          <path stroke="#283C55" stroke-width="2" d="M1.075 235.041V118.082h117.946v116.959H1.075Z"/>
+          <path stroke="#283C55" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="m118 119.041-117 116m118 0-118-117"/>
+          <path stroke="#283C55" stroke-width="2" d="M1.075 118V1.041h117.946V118H1.075Z"/>
+          <path stroke="#283C55" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M118 2 1 118m118 0L1 1"/>
+        </g>
+      </svg>
+    </div>
+    <h1 class="recovery__title heading">Восстановление пароля</h1>
+    <p class="recovery__desc">Мы оптравили на вашу почту письмо с инструкцией по восстановлению пароля</p>
+    <a class="button button--gray-color button--full-width" href="index.html">← Вернуться к авторизации</a>
+  </main>
+  @include('partials/footer.html')
+</body>
+
+</html>

@@ -10,9 +10,10 @@
 <body class="page__body">
   @include('partials/header.html',
   {
+    "logoClass":"",
     "class":"header--bg",
     "login":"true",
-    "home":"href='/'",
+    "home":"href=/",
   })
   <main class="main container">
     <h1 class="sr-only">Добавить проект</h1>
@@ -23,7 +24,7 @@
             "currentClass":"",
             "ariaCurrent": "",
             "linkText":"Все проекты",
-            "link":"href='projects.html'",
+            "link":"href=projects.html",
           },
           {
             "currentClass":"breadcrumb__link--current",

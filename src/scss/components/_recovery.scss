@@ -1,0 +1,21 @@
+.recovery {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  &__title {
+    font-size: 24px;
+    margin-bottom: 40px;
+    max-width: 380px;
+    text-align: center;
+  }
+  &__desc {
+    max-width: 332px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  &__media {
+    display: flex;
+    position: absolute;
+    bottom: calc(100% - (237px / 2));
+  }
+}

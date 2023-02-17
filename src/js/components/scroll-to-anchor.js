@@ -1,32 +1,36 @@
 function smoothScroll(target) {
-  let targetPosition = document.querySelector(target).offsetTop;
-  let startPosition = window.pageYOffset;
-  let distance = targetPosition - startPosition;
-  let startTime = null;
+  const element = document.querySelector(target);
+  const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
+  const targetPosition = element.offsetTop - headerHeight - 30;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  const duration = 2000; // Время анимации в миллисекундах
 
-  function animation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    let timeElapsed = currentTime - startTime;
-    let run = ease(timeElapsed, startPosition, distance, 2000);
-    window.scrollTo(0, run);
-    if (timeElapsed < 2000) requestAnimationFrame(animation);
+  let start = null;
+  let animationFrameId;
+
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    const timeElapsed = timestamp - start;
+    const percentComplete = Math.min(timeElapsed / duration, 1);
+    const ease = easeInOutQuad(percentComplete);
+    window.scrollTo(0, startPosition + distance * ease);
+    if (timeElapsed < duration) {
+      animationFrameId = window.requestAnimationFrame(step);
+    }
   }
 
-  function ease(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return c / 2 * t * t + b;
-    t--;
-    return -c / 2 * (t * (t - 2) - 1) + b;
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   }
 
-  requestAnimationFrame(animation);
+  animationFrameId = window.requestAnimationFrame(step);
 }
 
-let links = document.querySelectorAll('.scroll');
-links.forEach(function(link) {
-  link.addEventListener('click', function(e) {
+document.querySelectorAll('.scroll').forEach(link => {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    let target = link.getAttribute('href');
+    const target = link.getAttribute('href');
     smoothScroll(target);
   });
 });

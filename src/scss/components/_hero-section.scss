@@ -10,7 +10,7 @@
   }
 
   &__buttons {
-    margin-bottom: 62px;
+    margin-bottom: 118px;
   }
 
   &__media {
@@ -22,13 +22,41 @@
     width: 100%;
     height: auto;
     display: block;
+  }
+}
 
-    &-rotate {
-      will-change: transform;
-      transform-box: fill-box;
-      transform-origin: center;
-      animation:rotating 4.5s linear infinite reverse;
+@include responsive-point-1 {
+  .hero-section {
+    padding-block: 90px 30px;
+    &__media {
+      max-width: 800px;
+    }
+    &__buttons {
+      margin-bottom: 120px;
     }
   }
 }
 
+@include tablet {
+  .hero-section {
+    &__media {
+      max-width: 650px;
+    }
+    &__buttons {
+      margin-bottom: 100px;
+    }
+  }
+}
+
+@include mobile {
+  .hero-section {
+    &__media {
+      padding-inline:0;
+      width: 100vw;
+    }
+    &__buttons {
+      margin-bottom: 100px;
+      gap: 12px;
+    }
+  }
+}

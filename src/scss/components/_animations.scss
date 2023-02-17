@@ -6,3 +6,10 @@
     transform: rotate(360deg);
   }
 }
+
+.rotating {
+  will-change: transform;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation:rotating 4.5s linear infinite reverse;
+}

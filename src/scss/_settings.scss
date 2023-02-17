@@ -16,6 +16,7 @@ html {
   height: 100%;
   font-family: var(--font-family, sans-serif);
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-height) + 25px)
 }
 
 .page__body {
@@ -23,11 +24,18 @@ html {
   min-width: 320px;
   min-height: 100%;
   font-size: 16px;
-  color:rgba(var(--primary-color-rgb), 1.0);
+  color: rgba(var(--primary-color-rgb), 1.0);
   font-weight: 500;
   display: flex;
   flex-direction: column;
-  background-color:var(--bg-color, #fff);
+  background-color: var(--bg-color, #fff);
+}
+
+.disable-scroll {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 img {
@@ -100,7 +108,7 @@ a {
 }
 
 .container {
-  padding-inline:var(--container);
+  padding-inline: var(--container);
 }
 
 p {
@@ -108,19 +116,22 @@ p {
   line-height: 1.35;
   margin: 0;
 }
+
 p+p {
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .link {
   color: rgba(var(--primary-color-rgb), 1.0);
   font-size: inherit;
+
   &--underline {
     text-decoration: underline;
     text-decoration-style: dashed;
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
   }
+
   &--dashed {
     text-decoration-style: dashed;
   }
@@ -134,7 +145,7 @@ p+p {
 .text {
   font-size: 14px;
   line-height: 1.45;
-  color:rgba(var(--primary-color-rgb), 0.5);
+  color: rgba(var(--primary-color-rgb), 0.5);
   margin: 0;
 
   &--offset {
@@ -146,4 +157,26 @@ p+p {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+
+@include responsive-point-1 {
+  .disable-scroll {
+    overflow: initial;
+  }
+  .page__body {
+    background-color:#FBFBFB;
+  }
+}
+
+@include mobile {
+  .hide-for-small-only {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px
+  }
 }

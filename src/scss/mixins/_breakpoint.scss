@@ -12,6 +12,12 @@
   }
 }
 
+@mixin responsive-point-1 {
+  @media (max-width: (1300px)) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: (1024px)) {
     @content;
@@ -26,6 +32,18 @@
 
 @mixin mobile {
   @media (max-width: (576px)) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media (max-width: (450px)) {
+    @content;
+  }
+}
+
+@mixin wee-mobile {
+  @media (max-width: (350px)) {
     @content;
   }
 }

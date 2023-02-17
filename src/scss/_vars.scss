@@ -14,3 +14,16 @@
   --gray-color:#F9F9FA;
   --light-gray:#F0F1F2;
 }
+
+
+@media screen and (max-width:1242px) {
+  :root {
+    --container-offset: 30px;
+  }
+}
+
+@media screen and (max-width:576px) {
+  :root {
+    --container-offset: 20px;
+  }
+}
