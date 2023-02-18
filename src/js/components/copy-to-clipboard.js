@@ -20,9 +20,10 @@ function setErrorState(tooltip) {
 
 function handleCopy() {
   const tooltip = this.firstElementChild;
-  const input = this.nextElementSibling.value;
-
-  navigator.clipboard.writeText(`${input}`)
+  const input = this.nextElementSibling;
+  input.select();
+  input.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(`${input.value}`)
     .then(() => {
       setSuccessState(tooltip);
     })

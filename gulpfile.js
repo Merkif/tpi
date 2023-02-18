@@ -4,6 +4,7 @@ const {
   series,
   watch
 } = require('gulp');
+const formatHTML = require('gulp-format-html');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const del = require('del');
@@ -298,6 +299,12 @@ const htmlMinify = () => {
     .pipe(dest(buildFolder));
 }
 
+const htmlFormat = () => {
+  return src(`${buildFolder}/**/*.html`)
+    .pipe(formatHTML())
+    .pipe(dest(buildFolder));
+}
+
 const zipFiles = (done) => {
   del.sync([`${buildFolder}/*.zip`]);
   return src(`${buildFolder}/**/*.*`, {})
@@ -318,9 +325,9 @@ const toProd = (done) => {
 
 exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, watchFiles);
 
-exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, svgSprites)
+exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, svgSprites, htmlMinify, htmlFormat)
 
-exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, htmlMinify);
+exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, htmlMinify, htmlFormat);
 
 exports.cache = series(cache, rewrite);
 

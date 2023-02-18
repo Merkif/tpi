@@ -112,7 +112,7 @@
 
   .card {
     min-height: 220px;
-
+    border-radius:16px;
     @supports (aspect-ratio:1) {
       aspect-ratio: 353/220;
       min-height: initial;
