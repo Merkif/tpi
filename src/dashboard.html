@@ -10,12 +10,13 @@
 <body class="page__body">
   @include('partials/header.html',
   {
+    "hideOnSmall":"hide-on-small",
     "logoClass":"",
     "class":"header--bg",
     "login":"true",
     "home":"href=index.html",
   })
-  <main class="main container">
+  <main class="main container container--wide">
     <h1 class="sr-only">Добавить проект</h1>
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <ol class="breadcrumb__list" role="list">
@@ -142,7 +143,7 @@
         </div>
       </div>
       <div class="panel-layout__item panel-layout__item--half panel-layout__item--rspan-3">
-        <form class="form form--box" action="" method="post">
+        <form class="form form--box form--wide-on-tablet" action="" method="post">
           <h2 class="heading heading--primary">Данные проекта</h2>
           <div class="form__group">
             <label class="form__label">
@@ -216,18 +217,18 @@
               <a class="attachment" href="attachments/5g45d41v5df4g5g2d5.pdf">
                 <span class="attachment__text">Краткая версия без логотипа</span>
                 <span class="attachment__meta">PDF, 4.5 мБ</span>
-                <span aria-hidden="true">↓</span>
+                <span class="attachment__icon" aria-hidden="true">↓</span>
               </a>
             </li>
             <li class="attachments__item">
               <a class="attachment" href="attachments/5g45d4f4g5g2d5.xls">
                 <span class="attachment__text">Краткая версия без логотипа</span>
                 <span class="attachment__meta">XLS, 4.5 мБ</span>
-                <span aria-hidden="true">↓</span>
+                <span class="attachment__icon" aria-hidden="true">↓</span>
               </a>
             </li>
           </ul>
-          <a class="export-box__button button button--primary-color button--full-width" href="" download="">
+          <a class="export-box__button button button--primary-color button--full-width" download>
             <svg aria-hidden="true" width="12" height="12">
               <use xlink:href="img/sprite.svg#download"></use>
             </svg>

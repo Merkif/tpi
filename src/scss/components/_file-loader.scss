@@ -1,8 +1,9 @@
 .file-loader {
-  color:rgba(var(--primary-color-rgb), 0.5);
+  color: rgba(var(--primary-color-rgb), 0.5);
   display: flex;
   flex-direction: column;
   gap: 6px;
+
   &__input {
     clip: rect(0 0 0 0);
     -webkit-clip-path: inset(100%);
@@ -13,48 +14,59 @@
     white-space: nowrap;
     width: 1px
   }
+
   &__label {
     display: flex;
     gap: 8px;
     transition: color 0.2s linear;
     cursor: pointer;
     padding: 5px 0;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
 
     @include hover-focus-visible {
-      color:rgba(var(--primary-color-rgb), 1.0);
+      color: rgba(var(--primary-color-rgb), 1.0);
     }
+
     &:focus-within {
-      color:rgba(var(--primary-color-rgb), 1.0);
+      color: rgba(var(--primary-color-rgb), 1.0);
     }
   }
+
   &__files {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
+
   &__file {
     position: relative;
     display: flex;
-    align-items:center;
+    align-items: center;
     padding: 6px 16px 6px 16px;
     border-radius: 32px;
     gap: 5px;
-    background-color:#F0F1F2;
+    background-color: #F0F1F2;
     max-width: 352px;
+
     &-name {
-      color:inherit;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      color: inherit;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
       overflow: hidden;
+
       @include hover-focus-visible {
-        color:rgba(var(--primary-color-rgb), 1.0);
+        color: rgba(var(--primary-color-rgb), 1.0);
       }
     }
 
     &-delete {
       font-size: 0;
       padding: 0;
-      border:none;
+      border: none;
       background-color: transparent;
       position: relative;
       cursor: pointer;
@@ -62,7 +74,7 @@
       z-index: 1;
 
       &::after {
-        content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none'%3E%3Cpath fill='%23283C55' d='M10.24 11.187 6 6.94l-4.24 4.247-.947-.947L5.06 6 .813 1.76 1.76.813 6 5.06 10.24.82l.94.94L6.94 6l4.24 4.24-.94.947Z'/%3E%3C/svg%3E");
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none'%3E%3Cpath fill='%23283C55' d='M10.24 11.187 6 6.94l-4.24 4.247-.947-.947L5.06 6 .813 1.76 1.76.813 6 5.06 10.24.82l.94.94L6.94 6l4.24 4.24-.94.947Z'/%3E%3C/svg%3E");
         width: 15px;
         height: 15px;
       }

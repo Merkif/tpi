@@ -45,17 +45,29 @@
   }
 }
 
+@include large-mobile {
+  .header {
+    &__projects {
+      margin-left: auto;
+    }
+  }
+}
+
 @include mobile {
   .header {
-    column-gap: 30px;
+    column-gap: 24px;
     display: grid;
     grid-template-columns: 1fr max-content max-content;
 
     &__logo {
       margin-right: 0;
-      flex-shrink: 0;
+      justify-self: start;
     }
     &__helper {
+      margin-right: 0;
+    }
+
+    &__projects {
       margin-right: 0;
     }
   }

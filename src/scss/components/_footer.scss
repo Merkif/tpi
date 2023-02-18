@@ -1,18 +1,17 @@
 .footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr max-content max-content;
   align-items:center;
-  gap: 20px 50px;
+  gap: 20px 32px;
   padding-block: 55px 35px;
   font-size: 14px;
   color:rgba(40, 60, 85, 0.3);
   margin-top: auto;
-
+  &__copy {
+    font-size: inherit;
+  }
   &__link {
     color:inherit;
-    text-transform: uppercase;
-
     @include hover-focus-visible {
       color:rgba(40, 60, 85, 0.5);
     }
@@ -22,6 +21,14 @@
 
 @include small-tablet {
   .footer {
+    display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
+
+    &__link {
+      &--index {
+        order: 1;
+      }
+    }
   }
 }

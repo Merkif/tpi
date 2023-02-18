@@ -10,12 +10,13 @@
 <body class="page__body" style="--bg-color: #FBFBFB;">
     @include('partials/header.html',
     {
+      "hideOnSmall":"hide-on-small",
       "logoClass":"",
       "class":"header--bg",
       "login":"true",
       "home":"href=/",
     })
-  <main class="main container">
+  <main class="main container container--wide">
     <h1 class="sr-only">Добавить проект</h1>
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <ol class="breadcrumb__list" role="list">
@@ -76,10 +77,10 @@
           </li>
         </ul>
         <div class="questions__buttons">
-          <a class="button button--light-color" href="dashboard.html">Дашборд</a>
-          <button class="questions__button questions__button--prev button button--light-color" type="button">Назад</button>
-          <button class="questions__button questions__button--next button button--primary-color" type="button">Далее</button>
-          <button class="questions__button button button--primary-color questions__button--submit" type="submit" form="questions-form">Завершить</button>
+          <a class="questions__button questions__button--index-3 button button--light-color" href="dashboard.html">Дашборд</a>
+          <button class="questions__button questions__button--index-1 questions__button--prev button button--light-color" type="button">Назад</button>
+          <button class="questions__button questions__button--index-2 questions__button--next button button--primary-color" type="button">Далее</button>
+          <button class="questions__button questions__button--index-2 button button--primary-color questions__button--submit" type="submit" form="questions-form">Завершить</button>
         </div>
       </div>
       <form class="questions__form" method="post" id="questions-form" enctype="multipart/form-data">
@@ -118,7 +119,7 @@
                   </div>
                 </div>
                 <p>Определите из предложенных вариантов цели устойчивого развития проекта?</p>
-                <div class="flex flex--wrap flex--i-center flex--gap">
+                <div class="questions-slider__checkboxes flex flex--wrap flex--i-center flex--gap">
                   <label class="checkbox-field">
                     <input type="checkbox" name="step-1-target-1">
                     <span>Цель первая</span>
@@ -303,9 +304,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="events-container" id="events-container">
-                </div>
-                <button class="event-add" type="button">Добавить мероприятие</button>
               </div>
             </fieldset>
             <fieldset class="swiper-slide questions-slider__item" data-hash="step-7">
@@ -337,7 +335,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="flex flex--wrap flex--i-center flex--gap">
+                <div class="questions-slider__checkboxes flex flex--wrap flex--i-center flex--gap">
                   <label class="checkbox-field">
                     <input type="checkbox" name="step-1-target-1">
                     <span>Индекс обоснованности <b>(ИО)</b></span>
@@ -450,31 +448,7 @@
   </main>
   <script>
   </script>
-  @include('partials/footer.html')
-  <template id="event-template">
-    <div class="event">
-      <h2 class="event__title heading heading--secondary"></h2>
-      <label class="event__label">
-        <span class="sr-only">Название мероприятия</span>
-        <input class="event__input event__input--title" name="event-title" type="text" placeholder="Название мероприятия">
-      </label>
-      <label class="event__label event__label--date">
-        <svg class="event__icon" aria-hidden="true" width="12" height="14">
-          <use xlink:href="img/sprite.svg#calendar"></use>
-        </svg>
-        <span class="sr-only">Укажите дату начала мероприятия</span>
-        <input class="event__input event__input--date-start" name="event-start" type="text" placeholder="Укажите дату начала" onfocus="(this.type='date')" title="Укажите дату начала мероприятия">
-      </label>
-      <label class="event__label event__label--date">
-        <svg class="event__icon" aria-hidden="true" width="12" height="14">
-          <use xlink:href="img/sprite.svg#calendar"></use>
-        </svg>
-        <span class="sr-only">Укажите дату окончания мероприятия</span>
-        <input class="event__input event__input--date-end" name="event-end" type="text" placeholder="Укажите дату окончания" onfocus="(this.type='date')" title="Укажите дату окончания мероприятия">
-      </label>
-    </div>
-  </template>
-
+  @include('partials/footer.html');
 </body>
 
 </html>

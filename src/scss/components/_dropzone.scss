@@ -147,6 +147,13 @@
           &::after {
             display: none;
           }
+          &.media-uploader__preview-container--circle {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            margin-right: 16px;
+            align-self:center;
+          }
         }
       }
     }
@@ -162,6 +169,17 @@
       &-container {
         &--gap {
           margin-right: 0;
+
+          &.media-uploader__preview-container--circle {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            margin-right: 0;
+
+            .media-uploader__preview {
+              min-height: 100px;
+            }
+          }
         }
       }
     }

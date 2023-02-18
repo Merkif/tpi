@@ -28,5 +28,15 @@
     justify-self: start;
     margin-block-end: 20px;
     min-width: 160px;
+    display: block;
+  }
+}
+
+
+@include small-mobile {
+  .content {
+    &__button {
+      margin-bottom: 8px;
+    }
   }
 }

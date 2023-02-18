@@ -3,7 +3,7 @@
   --gutter:calc((var(--gap) - 17px) / 2);
   display: flex;
   flex-direction: column;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   font-size: 16px;
   overflow: hidden;
 
@@ -11,6 +11,9 @@
     display: flex;
     gap: var(--gap);
     white-space: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 16px;
   }
 
   &__item {
@@ -46,6 +49,19 @@
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
       overflow: hidden;
+    }
+  }
+}
+
+
+@include small-tablet {
+  .breadcrumb {
+    --gap:42px;
+    &__link {
+      &--current {
+        white-space: nowrap;
+        padding-right: 20px;
+      }
     }
   }
 }

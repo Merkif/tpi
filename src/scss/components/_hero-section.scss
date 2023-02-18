@@ -39,21 +39,24 @@
 
 @include tablet {
   .hero-section {
-    &__media {
-      max-width: 650px;
-    }
     &__buttons {
       margin-bottom: 100px;
     }
   }
 }
 
-@include mobile {
+@include small-tablet {
   .hero-section {
     &__media {
+      max-width: 100vw;
       padding-inline:0;
       width: 100vw;
     }
+  }
+}
+
+@include mobile {
+  .hero-section {
     &__buttons {
       margin-bottom: 100px;
       gap: 12px;

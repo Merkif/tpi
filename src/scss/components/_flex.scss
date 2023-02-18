@@ -13,3 +13,14 @@
     gap:var(--gap, 10px 24px);
   }
 }
+
+@include mobile {
+  .flex {
+    &--i-center {
+      align-items:flex-start;
+    }
+    &--gap {
+      --gap:16px;
+    }
+  }
+}

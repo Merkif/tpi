@@ -1,7 +1,9 @@
 .recovery {
-  display: grid;
-  place-content: center;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   &__title {
     font-size: 24px;
     margin-bottom: 40px;
@@ -17,5 +19,29 @@
     display: flex;
     position: absolute;
     bottom: calc(100% - (237px / 2));
+
+    &-svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+@include responsive-point-1 {
+  .recovery {
+    &__media {
+      bottom:calc((100% - var(--header-height)) - (200px / 2));
+      max-width: 300px;
+    }
+  }
+}
+
+
+@include mobile {
+  .recovery {
+    &__media {
+      display: none;
+    }
   }
 }

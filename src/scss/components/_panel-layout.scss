@@ -33,3 +33,36 @@
     }
   }
 }
+
+
+@include tablet {
+  .panel-layout {
+    --gap:24px;
+    &__item {
+      &--half {
+        grid-column: span 5;
+      }
+      &--rspan-2,
+      &--rspan-3,
+      &--rspan-4 {
+        grid-column: span 7;
+      }
+    }
+  }
+}
+
+@include responsive-point-3 {
+  .panel-layout {
+    --gap:20px;
+    &__item {
+      &--half {
+        grid-column: 1/-1;
+      }
+      &--rspan-2,
+      &--rspan-3,
+      &--rspan-4 {
+        grid-column: 1/-1;
+      }
+    }
+  }
+}

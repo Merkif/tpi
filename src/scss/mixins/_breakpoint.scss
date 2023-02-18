@@ -18,14 +18,50 @@
   }
 }
 
+@mixin responsive-point-2 {
+  @media (max-width: (1250px)) {
+    @content;
+  }
+}
+
+@mixin responsive-point-4 {
+  @media (max-width: (1160px)) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: (1024px)) {
     @content;
   }
 }
 
+@mixin responsive-point-5 {
+  @media (max-width: (988px)) {
+    @content;
+  }
+}
+
+@mixin responsive-point-3 {
+  @media (max-width: (900px)) {
+    @content;
+  }
+}
+
+@mixin responsive-point-6 {
+  @media (max-width: (830px)) {
+    @content;
+  }
+}
+
 @mixin small-tablet {
   @media (max-width: (768px)) {
+    @content;
+  }
+}
+
+@mixin large-mobile {
+  @media (max-width: (652px)) {
     @content;
   }
 }

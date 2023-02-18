@@ -10,7 +10,7 @@
     box-shadow: 8px 8px 16px #DFDFDF;
     border-radius: 40px;
     background-color:var(--light-color);
-    padding-inline:39px 32px;
+    padding-inline:36px;
     padding-block: 49px;
   }
 
@@ -312,8 +312,24 @@
   }
 }
 
+@include responsive-point-3 {
+  .form {
+    &--wide-on-tablet {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
 @include mobile {
   .form {
+    &--recovery {
+      width: 100%;
+    }
+    &--box {
+      padding-inline: 24px;
+      padding-block: 32px;
+    }
     &__actions {
       row-gap: 16px;
     }
@@ -322,11 +338,20 @@
 
 @include small-mobile {
   .form {
+    &--box {
+      border-radius:16px;
+      padding-inline: 20px;
+    }
     &__group {
       margin-bottom: 16px;
     }
     &__agreement {
       max-width: 100%;
     }
+  }
+
+  .textarea {
+    padding-inline: 20px;
+    padding-block: 20px;
   }
 }

@@ -5,18 +5,16 @@
 }
 
 .attachment {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items:center;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content max-content;
+  gap: 0 8px;
   color:inherit;
   padding-inline:15px;
+  cursor: pointer;
   padding-block: 11px 10px;
   border:1px solid rgba(var(--primary-color-rgb), 0.25);
   border-radius:33px;
   position: relative;
-  cursor: pointer;
 
   &[href$=".pdf"],
   &[href$=".PDF"],
@@ -58,5 +56,28 @@
     margin-right: auto;
     color:rgba(var(--primary-color-rgb), 0.5);
     text-transform: uppercase;
+    align-self:center;
+  }
+}
+
+
+
+@include tablet {
+  .attachment {
+    gap: 0 12px;
+    &::before {
+      grid-row: span 2;
+      align-self: center;
+      transform: scale(1.1);
+    }
+    &__meta {
+      font-size: 12px;
+      grid-row: 2;
+      grid-column: 2/ span 2;
+    }
+    &__icon {
+      grid-row: span 2;
+      align-self:center;
+    }
   }
 }

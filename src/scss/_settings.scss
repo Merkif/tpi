@@ -127,7 +127,6 @@ p+p {
 
   &--underline {
     text-decoration: underline;
-    text-decoration-style: dashed;
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
   }
@@ -163,13 +162,14 @@ p+p {
   .disable-scroll {
     overflow: initial;
   }
+
   .page__body {
-    background-color:#FBFBFB;
+    background-color: #FBFBFB;
   }
 }
 
-@include mobile {
-  .hide-for-small-only {
+@include large-mobile {
+  .hide-on-small {
     clip: rect(0 0 0 0);
     -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
@@ -178,5 +178,29 @@ p+p {
     position: absolute;
     white-space: nowrap;
     width: 1px
+  }
+
+}
+
+@include mobile {
+  .show-on-large {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px
+  }
+}
+
+@include small-mobile {
+  .container--wide {
+    padding-inline: 0;
+
+    .breadcrumb {
+      padding-inline: var(--container-offset);
+    }
   }
 }

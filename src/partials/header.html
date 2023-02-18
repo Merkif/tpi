@@ -2,7 +2,7 @@
   <a class="header__logo logo @logoClass" @home>
     <img class="logo__img" src="img/logo.svg" width="128" height="32" alt="Логотип фабрики позитивных изменений">
   </a>
-  <a class="header__helper" href="/help">
+  <a class="header__helper @hideOnSmall" href="help.html">
     <svg aria-hidden="true" width="16" height="16">
       <use xlink:href="img/sprite.svg#helper"></use>
     </svg>
@@ -22,7 +22,7 @@
       <svg aria-hidden="true" width="15" height="15">
         <use xlink:href="img/sprite.svg#user"></use>
       </svg>
-      <span>Войти <span class="hide-for-small-only">в аккаунт</span></span>
+      <span>Войти <span class="show-on-large">в аккаунт</span></span>
     </a>
   }
 
@@ -33,7 +33,7 @@
           <source srcset="img/elena.webp" type="image/webp">
           <img class="user-menu__avatar" loading="lazy" src="img/elena.jpg" width="32" height="32" alt="Елена Иванова">
         </picture>
-        <span class="user-menu__name">Елена Иванова</span>
+        <span class="user-menu__name show-on-large">Елена Иванова</span>
       </a>
       <ul class="user-menu__list" role="list">
         <li class="user-menu__item">

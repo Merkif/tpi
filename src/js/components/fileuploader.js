@@ -61,6 +61,12 @@ class FileUploader {
     }
 
     Array.from(files).forEach((file) => {
+      // Проверка на уже прикрепленный файл
+      const isAlreadyAdded = this.files.some((addedFile) => addedFile.name === file.name);
+      if (isAlreadyAdded) {
+        alert(`Файл ${file.name} уже прикреплен`);
+        return;
+      }
       if (file.size / 1024 / 1024 > this.options.maxFileSize) {
         this.options.onMaxFileSizeExceeded([file]);
         return;
