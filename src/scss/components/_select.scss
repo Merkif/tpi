@@ -4,6 +4,7 @@
   margin-bottom: 32px;
 
   &__value {
+    display: block;
     background-color: #fff;
     border: 1px solid #D7D7E1;
     border-radius: 33.3333px;
@@ -15,12 +16,16 @@
     cursor: pointer;
     transition: color 0.1s linear, border-color 0.1s linear;
     box-sizing: inherit;
-    width: 100%;
     max-width: 494px;
     text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+    span {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      line-break: anywhere;
+      overflow: hidden;
+    }
 
     &--selected {
       --alpha: 1.0;

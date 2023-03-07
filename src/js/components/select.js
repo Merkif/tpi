@@ -2,6 +2,7 @@ class Select {
   constructor(select) {
     this.select = select;
     this.selectBtn = select.querySelector('.c-select__value');
+    this.selectBtnText = this.selectBtn.querySelector('span');
     this.selectOptions = select.querySelector('.c-select__options');
     this.checkboxes = select.querySelectorAll('.c-select__options input');
     this.selectedOptionsContainer = null;
@@ -32,16 +33,17 @@ class Select {
   updateSelectText() {
     const selectedOptions = Array.from(this.checkboxes).filter(checkbox => checkbox.checked);
     if (selectedOptions.length === 1) {
-      this.selectBtn.textContent = selectedOptions[0].nextElementSibling.textContent;
-      this.selectBtn.title = selectedOptions[0].nextElementSibling.textContent;
+      const selectedText = selectedOptions[0].nextElementSibling.textContent;
+      this.selectBtnText.textContent = selectedText;
+      this.selectBtn.title = selectedText;
     } else if (selectedOptions.length > 1) {
-      this.selectBtn.textContent = this.getOptionsCountText(selectedOptions.length);
+      this.selectBtnText.textContent = this.getOptionsCountText(selectedOptions.length);
     } else {
       const radioButtons = Array.from(this.checkboxes).filter(checkbox => checkbox.type === 'radio');
       if (radioButtons.length > 0) {
-        this.selectBtn.textContent = 'Выберите один из ответов';
+        this.selectBtnText.textContent = 'Выберите один из ответов';
       } else {
-        this.selectBtn.textContent = 'Выбор нескольких вариантов ответа';
+        this.selectBtnText.textContent = 'Выбор нескольких вариантов ответа';
       }
     }
 
@@ -81,7 +83,7 @@ class Select {
     const windowHeight = window.innerHeight;
     const distanceToBottom = windowHeight - this.selectBtn.getBoundingClientRect().bottom;
 
-    if (distanceToBottom < 400 && selectHeight < distanceToBottom) {
+    if (distanceToBottom < 320 && selectHeight < distanceToBottom) {
       this.select.classList.add('c-select--open-top');
     } else {
       this.select.classList.remove('c-select--open-top');
