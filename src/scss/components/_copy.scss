@@ -38,7 +38,7 @@
     transition: opacity 0.2s linear;
   }
   &__button:hover &__label,
-  &__button:focus &__label {
+  &__button:focus-visible &__label {
     display: block;
   }
 

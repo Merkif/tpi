@@ -21,15 +21,39 @@ function setErrorState(tooltip) {
 function handleCopy() {
   const tooltip = this.firstElementChild;
   const input = this.nextElementSibling;
+  if (!input) {
+    setErrorState(tooltip);
+    return;
+  }
+  input.focus();
   input.select();
   input.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(`${input.value}`)
-    .then(() => {
-      setSuccessState(tooltip);
-    })
-    .catch(() => {
+  if (navigator.clipboard) {
+    try {
+      navigator.clipboard.writeText(`${input.value}`).then(() => {
+        setSuccessState(tooltip);
+        setTimeout(() => {
+          setDefaultState(tooltip);
+        }, 1000);
+      }).catch(() => {
+        setErrorState(tooltip);
+        setTimeout(() => {
+          setDefaultState(tooltip);
+        }, 1000);
+      });
+    } catch (err) {
+      console.error('Failed to copy to clipboard:', err);
       setErrorState(tooltip);
-    });
+      setTimeout(() => {
+        setDefaultState(tooltip);
+      }, 1000);
+    }
+  } else {
+    setErrorState(tooltip);
+    setTimeout(() => {
+      setDefaultState(tooltip);
+    }, 1000);
+  }
 }
 
 function handleMouseEnter() {

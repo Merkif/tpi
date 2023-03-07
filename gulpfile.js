@@ -105,9 +105,9 @@ const styles = () => {
       grid: true,
       overrideBrowserslist: ["last 2 versions"]
     }))
-    .pipe(gulpif(isProd, cleanCSS({
-      level: 2
-    })))
+    // .pipe(gulpif(isProd, cleanCSS({
+    //   level: 1
+    // })))
     .pipe(dest(paths.buildCssFolder, { sourcemaps: '.' }))
     .pipe(browserSync.stream());
 };

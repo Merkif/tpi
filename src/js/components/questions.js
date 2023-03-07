@@ -41,7 +41,7 @@
     const links = document.querySelectorAll(".questions__link");
     const currentIndex = swiper.activeIndex;
     const activeSlide = swiper.slides[swiper.activeIndex];
-    const inputs = activeSlide?.querySelectorAll("input:not([type='file']), textarea, select, .file");
+    const inputs = activeSlide?.querySelectorAll("input:not([type='file']):not(.c-select__input), textarea, select, .file");
 
     let isValid = true;
 

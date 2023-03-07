@@ -335,7 +335,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="questions-slider__checkboxes flex flex--wrap flex--i-center flex--gap">
+                <!-- <div class="questions-slider__checkboxes flex flex--wrap flex--i-center flex--gap">
                   <label class="checkbox-field">
                     <input type="checkbox" name="step-1-target-1">
                     <span>Индекс обоснованности <b>(ИО)</b></span>
@@ -344,7 +344,7 @@
                     <input type="checkbox" name="step-1-target-2">
                     <span>Индекс доказательности <b>(ИД)</b></span>
                   </label>
-                </div>
+                </div> -->
               </div>
             </fieldset>
             <fieldset class="swiper-slide questions-slider__item" data-hash="step-8">
@@ -438,6 +438,120 @@
                       </label>
                     </div>
                   </div>
+                </div>
+                <h3>Обоснованность социального импакта</h3>
+                <div class="c-select">
+                  <button class="c-select__value" type="button">Выбор нескольких вариантов ответа</button>
+                  <ul class="c-select__options" role="listbox">
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input" type="checkbox" id="option1">
+                        <span class="c-select__label-text">Изучен опыт других аналогичных проектов (в т. ч. зарубежных)</span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input" type="checkbox" id="option2">
+                        <span class="c-select__label-text">Проведён анализ публикаций о достижении аналогичного социального импакта</span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input" type="checkbox" id="option3">
+                        <span class="c-select__label-text">Вовлечены эксперты в этой области</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <h3>Использование в мониторинге и оценке данных из разных источников</h3>
+                <div class="c-select" data-close-on-select>
+                  <button class="c-select__value" type="button">Выберите один из ответов</button>
+                  <ul class="c-select__options" role="listbox">
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Мониторинг и оценка не проводятся и не планируются</span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Мнения специалистов, реализующих практику</span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Мнения конечных благополучателей</span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Учитываются мнения благополучателей, исполнителей и минимум одной другой вовлеченной стороны</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <h3>Системность процедур сбора и анализа данных для мониторинга и оценки</h3>
+                <div class="c-select" data-close-on-select>
+                  <button class="c-select__value" type="button">Выберите один из ответов</button>
+                  <ul class="c-select__options" role="listbox">
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Мониторинг и оценка не проводятся и не планируются</span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Сбор данных ою изменении ситуации благополучателей по выделенным показателям</span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Процедура производится в соответствии с явно прописанной методологией </span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Методология исследования выстроена в соответствии с существующими академическими источниками по теме и согласовываются со стратегическими задачами исследования</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <h3>Выбор методов сбора и анализа данных для мониторинга и оценки</h3>
+                <div class="c-select" data-close-on-select>
+                  <button class="c-select__value" type="button">Выберите один из ответов</button>
+                  <ul class="c-select__options" role="listbox">
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Мониторинг и оценка не проводятся и не планируются</span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Валидность инструмента обосновывается существующими примерами его использования</span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Инструменты выбраны на основании пилотного исследования на группе благополучателей </span>
+                      </label>
+                    </li>
+                    <li class="c-select__option" role="option">
+                      <label class="c-select__label checkbox-field">
+                        <input class="c-select__input sr-input" name="questions" type="radio">
+                        <span class="c-select__label-text">Используются несколько взаимодополняющих методов исследования с разными типами данных, проверяющие результаты друг друга</span>
+                      </label>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </fieldset>
